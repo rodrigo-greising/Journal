@@ -51,11 +51,15 @@ The project leverages the company's established technology stack:
 
 ```
 /
-├── product/        # Product documentation and requirements
-│   └── mvp.md      # MVP specifications and requirements
-├── technical/      # Technical documentation
-│   └── stack.md    # Available technology stack reference
-└── implementation/ # User stories and implementation planning
-    ├── README.md   # Implementation roadmap and priority order
-    └── *.md        # Individual user story files with acceptance criteria
+├── docs/           # All project documentation
+│   ├── product/    # Product documentation and requirements
+│   │   └── mvp.md  # MVP specifications and requirements
+│   ├── technical/  # Technical documentation
+│   │   └── stack.md # Available technology stack reference
+│   └── implementation/ # User stories and implementation planning
+│       ├── README.md   # Implementation roadmap and priority order
+│       └── *.md        # Individual user story files with acceptance criteria
+├── frontend/       # Remix React frontend application
+├── backend/        # NestJS backend API
+└── infrastructure/ # AWS infrastructure as code (Pulumi)
 ```
