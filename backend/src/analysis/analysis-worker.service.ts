@@ -1,4 +1,9 @@
-import { Injectable, Logger, OnModuleInit, OnModuleDestroy } from '@nestjs/common';
+import {
+  Injectable,
+  Logger,
+  OnModuleInit,
+  OnModuleDestroy,
+} from '@nestjs/common';
 import { Worker, Job } from 'bullmq';
 import { ConfigService } from '@nestjs/config';
 import { AnalysisService } from './analysis.service';
@@ -24,12 +29,14 @@ export class AnalysisWorkerService implements OnModuleInit, OnModuleDestroy {
     this.worker = new Worker(
       'analysis',
       async (job: Job<AnalysisJobData>) => {
-        this.logger.log(`Processing analysis job ${job.id} for entry ${job.data.journalEntryId}`);
+        this.logger.log(
+          `Processing analysis job ${job.id} for entry ${job.data.journalEntryId}`,
+        );
 
         try {
           await this.analysisService.processJournalEntry(
             job.data.journalEntryId,
-            job.data.analysisType
+            job.data.analysisType,
           );
 
           this.logger.log(`Completed analysis job ${job.id}`);
@@ -44,7 +51,7 @@ export class AnalysisWorkerService implements OnModuleInit, OnModuleDestroy {
         concurrency: 5,
         removeOnComplete: { count: 100 },
         removeOnFail: { count: 50 },
-      }
+      },
     );
 
     this.worker.on('completed', (job) => {

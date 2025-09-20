@@ -12,7 +12,7 @@ As a healthcare provider, I want unstructured patient journal entries (text/audi
 - [x] Failed processing attempts are retried with error logging
 
 ## Technical Requirements
-- [x] Integrate cloud NLP APIs (OpenAI GPT-4o-mini)
+- [x] Integrate cloud NLP APIs (OpenAI gpt-5-nano-2025-08-07)
 - [x] Implement speech-to-text for audio entries (OpenAI Whisper)
 - [x] Design data schema for structured output
 - [x] Add job queue for background processing (BullMQ + Redis)
@@ -52,7 +52,7 @@ I also want to use specifically a builder pattern for this. We can have the defa
 2. **OpenAI Integration** (`backend/src/openai/`)
    - `OpenAIService`: Handles all OpenAI API calls using LangChain
    - Audio transcription using OpenAI Whisper API
-   - Structured analysis using GPT-4o-mini with Zod schema validation
+   - Structured analysis using gpt-5-nano-2025-08-07 with Zod schema validation
    - Analysis types: mood, energy, nutrition, triggers
    - Langfuse integration for LLM observability and tracing
 
@@ -165,7 +165,7 @@ I also want to use specifically a builder pattern for this. We can have the defa
 - LangChain for structured output parsing
 - Zod schemas for type-safe validation
 - Langfuse for observability and debugging
-- OpenAI GPT-4o-mini for cost-effective analysis
+- OpenAI gpt-5-nano-2025-08-07 for cost-effective analysis
 - Whisper API for audio transcription
 
 #### Error Handling

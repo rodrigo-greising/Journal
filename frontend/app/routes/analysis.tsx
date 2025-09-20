@@ -291,6 +291,67 @@ function TriggerAnalysisCard({ result }: { result: any }) {
   );
 }
 
+function SleepAnalysisCard({ result }: { result: any }) {
+  return (
+    <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-lg p-4 border border-purple-200">
+      <h4 className="font-semibold text-purple-900 mb-3 flex items-center">
+        <span className="mr-2">😴</span>
+        Sleep Analysis
+      </h4>
+      <div className="space-y-2">
+        <div className="flex items-center justify-between">
+          <span className="text-sm text-purple-700">Sleep Quality:</span>
+          <div className="flex items-center">
+            <div className="w-20 bg-gray-200 rounded-full h-2 mr-2">
+              <div
+                className="bg-purple-600 h-2 rounded-full"
+                style={{ width: `${(result.sleepQuality / 10) * 100}%` }}
+              ></div>
+            </div>
+            <span className="text-sm font-medium">{result.sleepQuality}/10</span>
+          </div>
+        </div>
+        {result.sleepDuration && (
+          <div className="flex items-center justify-between">
+            <span className="text-sm text-purple-700">Sleep Duration:</span>
+            <span className="text-sm font-medium">{result.sleepDuration} hours</span>
+          </div>
+        )}
+        {result.sleepPatterns && result.sleepPatterns.length > 0 && (
+          <div>
+            <span className="text-sm text-purple-700">Sleep Patterns:</span>
+            <div className="flex flex-wrap gap-1 mt-1">
+              {result.sleepPatterns.map((pattern: string, index: number) => (
+                <span
+                  key={index}
+                  className="px-2 py-1 bg-purple-100 text-purple-800 rounded-full text-xs"
+                >
+                  {pattern}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+        {result.sleepDisruptions && result.sleepDisruptions.length > 0 && (
+          <div>
+            <span className="text-sm text-purple-700">Sleep Disruptions:</span>
+            <div className="flex flex-wrap gap-1 mt-1">
+              {result.sleepDisruptions.map((disruption: string, index: number) => (
+                <span
+                  key={index}
+                  className="px-2 py-1 bg-red-100 text-red-800 rounded-full text-xs"
+                >
+                  {disruption}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 function AnalysisResultCard({ analysisResult }: { analysisResult: AnalysisResult }) {
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
@@ -333,6 +394,8 @@ function AnalysisResultCard({ analysisResult }: { analysisResult: AnalysisResult
         return <NutritionAnalysisCard result={analysisResult.result} />;
       case 'triggers':
         return <TriggerAnalysisCard result={analysisResult.result} />;
+      case 'sleep':
+        return <SleepAnalysisCard result={analysisResult.result} />;
       default:
         return <div className="text-gray-500">Unknown analysis type</div>;
     }
@@ -547,6 +610,7 @@ export default function Analysis() {
               <option value="energy">Energy Analysis</option>
               <option value="nutrition">Nutrition Analysis</option>
               <option value="triggers">Trigger Analysis</option>
+              <option value="sleep">Sleep Analysis</option>
             </select>
           </div>
         </div>

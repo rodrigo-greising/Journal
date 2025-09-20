@@ -5,7 +5,9 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { JournalEntriesModule } from './journal-entries/journal-entries.module';
 import { AnalysisModule } from './analysis/analysis.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 import { LangfuseModule } from './langfuse/langfuse.module';
+import { TestingModule } from './testing/testing.module';
 
 @Module({
   imports: [
@@ -24,7 +26,9 @@ import { LangfuseModule } from './langfuse/langfuse.module';
     }),
     JournalEntriesModule,
     AnalysisModule,
+    DashboardModule,
     LangfuseModule,
+    TestingModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -16,7 +16,9 @@ export class LangfuseService implements OnModuleInit, OnModuleDestroy {
     this.langfuseSpanProcessor = new LangfuseSpanProcessor({
       publicKey: this.configService.get<string>('LANGFUSE_PUBLIC_KEY')!,
       secretKey: this.configService.get<string>('LANGFUSE_SECRET_KEY')!,
-      baseUrl: this.configService.get<string>('LANGFUSE_HOST') ?? 'http://localhost:3000',
+      baseUrl:
+        this.configService.get<string>('LANGFUSE_HOST') ??
+        'http://localhost:3000',
       environment: this.configService.get<string>('NODE_ENV') ?? 'development',
     });
 
@@ -46,7 +48,7 @@ export class LangfuseService implements OnModuleInit, OnModuleDestroy {
     sessionId: string,
     userId?: string,
     tags?: string[],
-    metadata?: Record<string, any>
+    metadata?: Record<string, any>,
   ): CallbackHandler {
     const handlerParams: any = {
       sessionId,
@@ -68,13 +70,13 @@ export class LangfuseService implements OnModuleInit, OnModuleDestroy {
    */
   createAnalysisCallbackHandler(
     journalEntryId: string,
-    analysisType: 'mood' | 'energy' | 'nutrition' | 'triggers',
-    userId?: string
+    analysisType: 'mood' | 'energy' | 'nutrition' | 'triggers' | 'sleep',
+    userId?: string,
   ): CallbackHandler {
     return this.createCallbackHandler(
       `journal-analysis-${journalEntryId}`,
       userId,
-      ['journal-analysis', analysisType]
+      ['journal-analysis', analysisType],
     );
   }
 

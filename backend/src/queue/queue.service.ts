@@ -39,18 +39,14 @@ export class QueueService implements OnModuleInit {
   }
 
   async addAnalysisJob(jobData: AnalysisJobData): Promise<void> {
-    await this.analysisQueue.add(
-      'process-analysis',
-      jobData,
-      {
-        priority: jobData.analysisType === 'triggers' ? 10 : 5, // Prioritize trigger analysis
-        delay: 1000, // Small delay to batch multiple analyses
-      }
-    );
+    await this.analysisQueue.add('process-analysis', jobData, {
+      priority: jobData.analysisType === 'triggers' ? 10 : 5, // Prioritize trigger analysis
+      delay: 1000, // Small delay to batch multiple analyses
+    });
   }
 
   async addBulkAnalysisJobs(jobDataArray: AnalysisJobData[]): Promise<void> {
-    const jobs = jobDataArray.map(jobData => ({
+    const jobs = jobDataArray.map((jobData) => ({
       name: 'process-analysis',
       data: jobData,
       opts: {
