@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Param, Body, Query } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Param,
+  Body,
+  Query,
+  Delete,
+} from '@nestjs/common';
 import { AnalysisService } from './analysis.service';
 import { QueueService } from '../queue/queue.service';
 import type { AnalysisType } from './analysis-result.entity';
@@ -28,7 +36,7 @@ export class AnalysisController {
   @Post('process/:entryId')
   async processEntry(
     @Param('entryId') entryId: string,
-    @Body() body: { analysisTypes?: AnalysisType[] }
+    @Body() body: { analysisTypes?: AnalysisType[] },
   ) {
     const analysisTypes = body.analysisTypes || ['mood', 'energy'];
     await this.analysisService.queueAnalysisForEntry(entryId, analysisTypes);
@@ -51,7 +59,7 @@ export class AnalysisController {
 
     return {
       message: 'Bulk processing queued successfully',
-      analysisTypes
+      analysisTypes,
     };
   }
 
@@ -96,12 +104,13 @@ export class AnalysisController {
   @Post('builder/custom/:entryId')
   async processWithCustomBuilder(
     @Param('entryId') entryId: string,
-    @Body() config: {
+    @Body()
+    config: {
       includeMood?: boolean;
       includeEnergy?: boolean;
       includeNutrition?: boolean;
       includeTriggers?: boolean;
-    }
+    },
   ) {
     const builder = await this.analysisService.createAnalysisBuilder();
 
@@ -118,7 +127,25 @@ export class AnalysisController {
 
     return {
       message: 'Custom analysis queued',
-      analysisTypes: enabledAnalyses
+      analysisTypes: enabledAnalyses,
     };
+  }
+
+  @Delete('entry/:entryId')
+  async deleteAnalysisForEntry(@Param('entryId') entryId: string) {
+    await this.analysisService.deleteAnalysisForEntry(entryId);
+    return { message: 'Analysis results deleted for entry' };
+  }
+
+  @Delete('type/:type')
+  async deleteAnalysisByType(@Param('type') type: AnalysisType) {
+    await this.analysisService.deleteAnalysisByType(type);
+    return { message: `All ${type} analysis results deleted` };
+  }
+
+  @Delete('all')
+  async deleteAllAnalysis() {
+    await this.analysisService.deleteAllAnalysis();
+    return { message: 'All analysis results deleted' };
   }
 }

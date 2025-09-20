@@ -14,8 +14,12 @@ export class JournalEntriesService {
     private analysisService: AnalysisService,
   ) {}
 
-  async create(createJournalEntryDto: CreateJournalEntryDto): Promise<JournalEntry> {
-    const journalEntry = this.journalEntriesRepository.create(createJournalEntryDto);
+  async create(
+    createJournalEntryDto: CreateJournalEntryDto,
+  ): Promise<JournalEntry> {
+    const journalEntry = this.journalEntriesRepository.create(
+      createJournalEntryDto,
+    );
     const savedEntry = await this.journalEntriesRepository.save(journalEntry);
 
     // Queue automatic analysis for new entries
@@ -73,7 +77,11 @@ export class JournalEntriesService {
       const builder = await this.analysisService.createAnalysisBuilder();
       await builder.getDefaultAnalysis().executeFor(journalEntryId);
     } catch (error) {
-      console.error('Failed to queue default analysis for entry:', journalEntryId, error);
+      console.error(
+        'Failed to queue default analysis for entry:',
+        journalEntryId,
+        error,
+      );
     }
   }
 
@@ -81,7 +89,10 @@ export class JournalEntriesService {
     return await this.journalEntriesRepository.findOne({ where: { id } });
   }
 
-  async update(id: string, updateJournalEntryDto: UpdateJournalEntryDto): Promise<JournalEntry | null> {
+  async update(
+    id: string,
+    updateJournalEntryDto: UpdateJournalEntryDto,
+  ): Promise<JournalEntry | null> {
     await this.journalEntriesRepository.update(id, updateJournalEntryDto);
     return await this.findOne(id);
   }
@@ -97,5 +108,17 @@ export class JournalEntriesService {
       return await this.journalEntriesRepository.save(entry);
     }
     return null;
+  }
+
+  async deleteAll(): Promise<void> {
+    await this.journalEntriesRepository.clear();
+  }
+
+  async deleteDrafts(): Promise<void> {
+    await this.journalEntriesRepository.delete({ isDraft: true });
+  }
+
+  async hardDeleteSoftDeleted(): Promise<void> {
+    await this.journalEntriesRepository.delete({ isDeleted: true });
   }
 }

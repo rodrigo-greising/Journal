@@ -49,7 +49,7 @@ export interface EnergyAnalysisResult {
 }
 
 export interface NutritionAnalysisResult {
-  foodMentions: string[];
+  foodGroups: string[]; // Changed from foodMentions to foodGroups
   estimatedCalories?: number;
   macros?: {
     protein?: number;

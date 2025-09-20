@@ -14,7 +14,10 @@ export class DashboardService {
     private analysisResultsRepository: Repository<AnalysisResult>,
   ) {}
 
-  async getDashboardData(startDate: Date, endDate: Date): Promise<DashboardData> {
+  async getDashboardData(
+    startDate: Date,
+    endDate: Date,
+  ): Promise<DashboardData> {
     // Get journal entries in date range
     const entries = await this.journalEntriesRepository.find({
       where: {
@@ -34,10 +37,14 @@ export class DashboardService {
     });
 
     // Filter by journal entry date range manually
-    const analysisResults = allAnalysisResults.filter(result => {
+    const analysisResults = allAnalysisResults.filter((result) => {
       const entryDate = new Date(result.journalEntry.createdAt);
-      return entryDate >= startDate && entryDate <= endDate &&
-             !result.journalEntry.isDraft && !result.journalEntry.isDeleted;
+      return (
+        entryDate >= startDate &&
+        entryDate <= endDate &&
+        !result.journalEntry.isDraft &&
+        !result.journalEntry.isDeleted
+      );
     });
 
     // Process trends data
@@ -62,9 +69,12 @@ export class DashboardService {
     const sleepData: Array<{ date: string; value: number }> = [];
 
     // Group by date and analysis type
-    const resultsByDate = new Map<string, { mood?: number; energy?: number; sleep?: number }>();
+    const resultsByDate = new Map<
+      string,
+      { mood?: number; energy?: number; sleep?: number }
+    >();
 
-    analysisResults.forEach(result => {
+    analysisResults.forEach((result) => {
       const date = result.journalEntry.createdAt.toISOString().split('T')[0];
 
       if (!resultsByDate.has(date)) {
@@ -75,7 +85,10 @@ export class DashboardService {
 
       if (result.analysisType === 'mood' && result.result?.moodScale) {
         dayData.mood = result.result.moodScale;
-      } else if (result.analysisType === 'energy' && result.result?.energyLevel) {
+      } else if (
+        result.analysisType === 'energy' &&
+        result.result?.energyLevel
+      ) {
         dayData.energy = result.result.energyLevel;
         if (result.result?.sleepQuality) {
           dayData.sleep = result.result.sleepQuality;
@@ -104,17 +117,27 @@ export class DashboardService {
   }
 
   private processWordCloud(analysisResults: AnalysisResult[]) {
-    const wordFrequency = new Map<string, { count: number; category: string }>();
+    const wordFrequency = new Map<
+      string,
+      { count: number; category: string }
+    >();
 
-    analysisResults.forEach(result => {
+    analysisResults.forEach((result) => {
       if (result.analysisType === 'triggers' && result.result) {
         // Process stressors (handle both 'stressor' and 'stressors' fields)
-        const stressors = result.result.stressor || result.result.stressors || [];
+        const stressors =
+          result.result.stressor || result.result.stressors || [];
         if (stressors && Array.isArray(stressors)) {
           stressors.forEach((stressor: string) => {
             const key = stressor.toLowerCase();
-            const current = wordFrequency.get(key) || { count: 0, category: 'triggers' };
-            wordFrequency.set(key, { count: current.count + 1, category: 'triggers' });
+            const current = wordFrequency.get(key) || {
+              count: 0,
+              category: 'triggers',
+            };
+            wordFrequency.set(key, {
+              count: current.count + 1,
+              category: 'triggers',
+            });
           });
         }
 
@@ -122,8 +145,14 @@ export class DashboardService {
         if (result.result.cravings) {
           result.result.cravings.forEach((craving: string) => {
             const key = craving.toLowerCase();
-            const current = wordFrequency.get(key) || { count: 0, category: 'triggers' };
-            wordFrequency.set(key, { count: current.count + 1, category: 'triggers' });
+            const current = wordFrequency.get(key) || {
+              count: 0,
+              category: 'triggers',
+            };
+            wordFrequency.set(key, {
+              count: current.count + 1,
+              category: 'triggers',
+            });
           });
         }
       }
@@ -131,16 +160,28 @@ export class DashboardService {
       if (result.analysisType === 'mood' && result.result?.emotions) {
         result.result.emotions.forEach((emotion: string) => {
           const key = emotion.toLowerCase();
-          const current = wordFrequency.get(key) || { count: 0, category: 'emotions' };
-          wordFrequency.set(key, { count: current.count + 1, category: 'emotions' });
+          const current = wordFrequency.get(key) || {
+            count: 0,
+            category: 'emotions',
+          };
+          wordFrequency.set(key, {
+            count: current.count + 1,
+            category: 'emotions',
+          });
         });
       }
 
       if (result.analysisType === 'nutrition' && result.result?.foodMentions) {
         result.result.foodMentions.forEach((food: string) => {
           const key = food.toLowerCase();
-          const current = wordFrequency.get(key) || { count: 0, category: 'food' };
-          wordFrequency.set(key, { count: current.count + 1, category: 'food' });
+          const current = wordFrequency.get(key) || {
+            count: 0,
+            category: 'food',
+          };
+          wordFrequency.set(key, {
+            count: current.count + 1,
+            category: 'food',
+          });
         });
       }
     });
@@ -156,27 +197,39 @@ export class DashboardService {
       .slice(0, 50); // Limit to top 50 words
   }
 
-  private processSummary(entries: JournalEntry[], analysisResults: AnalysisResult[]) {
+  private processSummary(
+    entries: JournalEntry[],
+    analysisResults: AnalysisResult[],
+  ) {
     const totalEntries = entries.length;
 
     // Calculate average mood and energy
-    const moodResults = analysisResults.filter(r => r.analysisType === 'mood' && r.result?.moodScale);
-    const energyResults = analysisResults.filter(r => r.analysisType === 'energy' && r.result?.energyLevel);
+    const moodResults = analysisResults.filter(
+      (r) => r.analysisType === 'mood' && r.result?.moodScale,
+    );
+    const energyResults = analysisResults.filter(
+      (r) => r.analysisType === 'energy' && r.result?.energyLevel,
+    );
 
-    const avgMood = moodResults.length > 0
-      ? moodResults.reduce((sum, r) => sum + r.result.moodScale, 0) / moodResults.length
-      : 0;
+    const avgMood =
+      moodResults.length > 0
+        ? moodResults.reduce((sum, r) => sum + r.result.moodScale, 0) /
+          moodResults.length
+        : 0;
 
-    const avgEnergy = energyResults.length > 0
-      ? energyResults.reduce((sum, r) => sum + r.result.energyLevel, 0) / energyResults.length
-      : 0;
+    const avgEnergy =
+      energyResults.length > 0
+        ? energyResults.reduce((sum, r) => sum + r.result.energyLevel, 0) /
+          energyResults.length
+        : 0;
 
     // Get common triggers
     const triggerFrequency = new Map<string, number>();
     analysisResults
-      .filter(r => r.analysisType === 'triggers' && r.result)
-      .forEach(result => {
-        const stressors = result.result.stressor || result.result.stressors || [];
+      .filter((r) => r.analysisType === 'triggers' && r.result)
+      .forEach((result) => {
+        const stressors =
+          result.result.stressor || result.result.stressors || [];
         if (stressors && Array.isArray(stressors)) {
           stressors.forEach((stressor: string) => {
             const current = triggerFrequency.get(stressor) || 0;
@@ -206,8 +259,12 @@ export class DashboardService {
       const earlierMood = moodResults.slice(-14, -7);
 
       if (recentMood.length > 0 && earlierMood.length > 0) {
-        const recentAvg = recentMood.reduce((sum, r) => sum + r.result.moodScale, 0) / recentMood.length;
-        const earlierAvg = earlierMood.reduce((sum, r) => sum + r.result.moodScale, 0) / earlierMood.length;
+        const recentAvg =
+          recentMood.reduce((sum, r) => sum + r.result.moodScale, 0) /
+          recentMood.length;
+        const earlierAvg =
+          earlierMood.reduce((sum, r) => sum + r.result.moodScale, 0) /
+          earlierMood.length;
 
         if (recentAvg > earlierAvg) {
           positiveTrends.push('Mood has been improving recently');

@@ -11,8 +11,12 @@ export class DashboardController {
     @Query('startDate') startDate?: string,
     @Query('endDate') endDate?: string,
   ): Promise<DashboardData> {
-    const start = startDate ? new Date(startDate) : new Date(Date.now() - 90 * 24 * 60 * 60 * 1000); // 90 days ago
-    const end = endDate ? new Date(endDate) : new Date(Date.now() + 24 * 60 * 60 * 1000); // Tomorrow
+    const start = startDate
+      ? new Date(startDate)
+      : new Date(Date.now() - 90 * 24 * 60 * 60 * 1000); // 90 days ago
+    const end = endDate
+      ? new Date(endDate)
+      : new Date(Date.now() + 24 * 60 * 60 * 1000); // Tomorrow
 
     return await this.dashboardService.getDashboardData(start, end);
   }

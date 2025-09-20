@@ -1,4 +1,15 @@
-import { Controller, Get, Post, Body, Param, Delete, Put, UseInterceptors, UploadedFile, BadRequestException } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  Delete,
+  Put,
+  UseInterceptors,
+  UploadedFile,
+  BadRequestException,
+} from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { JournalEntriesService } from './journal-entries.service';
 import { CreateJournalEntryDto } from './dto/create-journal-entry.dto';
@@ -70,7 +81,10 @@ export class JournalEntriesController {
   }
 
   @Put(':id')
-  update(@Param('id') id: string, @Body() updateJournalEntryDto: UpdateJournalEntryDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateJournalEntryDto: UpdateJournalEntryDto,
+  ) {
     return this.journalEntriesService.update(id, updateJournalEntryDto);
   }
 
@@ -82,5 +96,23 @@ export class JournalEntriesController {
   @Delete(':id/soft')
   softDelete(@Param('id') id: string) {
     return this.journalEntriesService.softDelete(id);
+  }
+
+  @Delete('all')
+  async deleteAll() {
+    await this.journalEntriesService.deleteAll();
+    return { message: 'All journal entries deleted' };
+  }
+
+  @Delete('drafts')
+  async deleteDrafts() {
+    await this.journalEntriesService.deleteDrafts();
+    return { message: 'All draft entries deleted' };
+  }
+
+  @Delete('soft-deleted')
+  async hardDeleteSoftDeleted() {
+    await this.journalEntriesService.hardDeleteSoftDeleted();
+    return { message: 'All soft-deleted entries permanently removed' };
   }
 }

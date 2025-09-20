@@ -10,14 +10,22 @@ export class StorageService {
     return {
       storage: diskStorage({
         destination: './uploads/audio',
-        filename: (req: Request, file: Express.Multer.File, callback: (error: Error | null, filename: string) => void) => {
+        filename: (
+          req: Request,
+          file: Express.Multer.File,
+          callback: (error: Error | null, filename: string) => void,
+        ) => {
           const uniqueSuffix = randomUUID();
           const extension = extname(file.originalname);
           const filename = `${uniqueSuffix}${extension}`;
           callback(null, filename);
         },
       }),
-      fileFilter: (req: Request, file: Express.Multer.File, callback: (error: Error | null, acceptFile: boolean) => void) => {
+      fileFilter: (
+        req: Request,
+        file: Express.Multer.File,
+        callback: (error: Error | null, acceptFile: boolean) => void,
+      ) => {
         // Accept audio files
         if (file.mimetype.startsWith('audio/')) {
           callback(null, true);
