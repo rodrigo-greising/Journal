@@ -8,7 +8,7 @@ This document outlines the current company technology stack available for projec
 ### Frontend Development
 - **TypeScript** - Type-safe JavaScript development
 - **React** - Component-based UI library
-- **Remix** - Full-stack web framework
+- **React Router** - Full-stack web framework (v7)
 - **Tailwind CSS** - Utility-first CSS framework
 
 ### Backend Development

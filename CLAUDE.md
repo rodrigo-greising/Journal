@@ -22,7 +22,7 @@ The project leverages the company's established technology stack:
 
 ### Frontend
 - **TypeScript** with **React**
-- **Remix** for full-stack web framework
+- **React Router** for full-stack web framework
 - **Tailwind CSS** for styling
 
 ### Backend
@@ -40,6 +40,83 @@ The project leverages the company's established technology stack:
 - **Datadog**, **Grafana**, **Sentry** for application monitoring
 - **CloudWatch** for AWS monitoring
 
+## Common Development Commands
+
+### Root Level (Workspace Commands)
+```bash
+# Start both frontend and backend in development mode
+npm run dev
+
+# Build both applications
+npm run build
+
+# Run all tests
+npm run test
+
+# Start services individually
+npm run dev:frontend  # React Router frontend on http://localhost:5173
+npm run dev:backend   # NestJS backend on http://localhost:3001
+```
+
+### Frontend Commands (cd frontend/)
+```bash
+# Development server with Vite
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+
+# Type checking
+npm run typecheck
+```
+
+### Backend Commands (cd backend/)
+```bash
+# Development server with hot reload
+npm run start:dev
+
+# Build application
+npm run build
+
+# Start production server
+npm start
+
+# Lint and format code
+npm run lint
+npm run format
+
+# Testing
+npm test              # Run unit tests
+npm run test:watch    # Run tests in watch mode
+npm run test:cov      # Run tests with coverage
+npm run test:e2e      # Run end-to-end tests
+```
+
+## Architecture Overview
+
+This is a monorepo using npm workspaces with two main applications:
+
+### Frontend Architecture
+- **React Router 7** with Vite for fast development
+- **React 19** with TypeScript for type safety
+- **Tailwind CSS v4** for styling
+- Built-in TypeScript support and type generation
+
+### Backend Architecture
+- **NestJS** framework following modular architecture patterns
+- **TypeScript** throughout with strict type checking
+- **Jest** for unit and integration testing
+- **Prettier + ESLint** for code formatting and quality
+- Controllers, Services, and Modules following NestJS conventions
+
+### Development Workflow
+- Root package.json uses `concurrently` to run both services together
+- Each service can be developed independently
+- Shared TypeScript configuration and tooling across workspace
+
 ## Development Guidelines
 
 - Prioritize existing stack technologies over introducing new alternatives
@@ -53,13 +130,9 @@ The project leverages the company's established technology stack:
 /
 ├── docs/           # All project documentation
 │   ├── product/    # Product documentation and requirements
-│   │   └── mvp.md  # MVP specifications and requirements
 │   ├── technical/  # Technical documentation
-│   │   └── stack.md # Available technology stack reference
 │   └── implementation/ # User stories and implementation planning
-│       ├── README.md   # Implementation roadmap and priority order
-│       └── *.md        # Individual user story files with acceptance criteria
-├── frontend/       # Remix React frontend application
+├── frontend/       # React Router frontend application
 ├── backend/        # NestJS backend API
 └── infrastructure/ # AWS infrastructure as code (Pulumi)
 ```

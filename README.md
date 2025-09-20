@@ -12,7 +12,7 @@ npm install
 npm run dev
 
 # Or start individually:
-npm run dev:frontend  # Next.js frontend on http://localhost:3000
+npm run dev:frontend  # React Router frontend on http://localhost:5173
 npm run dev:backend   # NestJS backend on http://localhost:3001
 ```
 
@@ -20,7 +20,7 @@ npm run dev:backend   # NestJS backend on http://localhost:3001
 
 ```
 /
-├── frontend/       # Next.js React frontend application
+├── frontend/       # React Router frontend application
 ├── backend/        # NestJS backend API
 ├── infrastructure/ # AWS infrastructure as code (Pulumi)
 └── docs/          # All project documentation
@@ -28,7 +28,7 @@ npm run dev:backend   # NestJS backend on http://localhost:3001
 
 ## Technology Stack
 
-- **Frontend**: Next.js, React, TypeScript, Tailwind CSS
+- **Frontend**: React Router, React, TypeScript, Tailwind CSS
 - **Backend**: NestJS, TypeScript, GraphQL, gRPC, WebSockets
 - **Database**: PostgreSQL with Redis for caching
 - **Infrastructure**: AWS with Pulumi IaC
