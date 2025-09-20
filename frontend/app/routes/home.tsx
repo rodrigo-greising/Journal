@@ -1,5 +1,6 @@
 import type { Route } from "./+types/home";
 import { useState, useEffect, useRef } from "react";
+import { AudioRecorder } from "../components/AudioRecorder";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -14,6 +15,9 @@ interface JournalEntry {
   createdAt: string;
   isDraft: boolean;
   isDeleted: boolean;
+  type: 'text' | 'audio';
+  audioUrl?: string;
+  duration?: number;
 }
 
 interface JournalEntryProps {
@@ -23,17 +27,23 @@ interface JournalEntryProps {
 }
 
 function JournalEntryComponent({ entry, onEdit, onDelete }: JournalEntryProps) {
+  const formatDuration = (seconds: number) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
+  };
+
   return (
     <article
       className={`bg-white rounded-lg shadow-md p-4 border ${
         entry.isDraft ? 'border-amber-200 bg-amber-50' : 'border-gray-200'
-      } ${entry.isDraft ? 'cursor-pointer hover:border-amber-300 transition-colors' : ''}`}
-      aria-label={`${entry.isDraft ? 'Draft journal entry' : 'Journal entry'} from ${new Date(entry.createdAt).toLocaleDateString()}`}
-      onClick={entry.isDraft ? () => onEdit(entry) : undefined}
-      role={entry.isDraft ? 'button' : 'article'}
-      tabIndex={entry.isDraft ? 0 : undefined}
+      } ${entry.isDraft && entry.type === 'text' ? 'cursor-pointer hover:border-amber-300 transition-colors' : ''}`}
+      aria-label={`${entry.isDraft ? 'Draft' : ''} ${entry.type} journal entry from ${new Date(entry.createdAt).toLocaleDateString()}`}
+      onClick={entry.isDraft && entry.type === 'text' ? () => onEdit(entry) : undefined}
+      role={entry.isDraft && entry.type === 'text' ? 'button' : 'article'}
+      tabIndex={entry.isDraft && entry.type === 'text' ? 0 : undefined}
       onKeyDown={(e) => {
-        if (entry.isDraft && (e.key === 'Enter' || e.key === ' ')) {
+        if (entry.isDraft && entry.type === 'text' && (e.key === 'Enter' || e.key === ' ')) {
           e.preventDefault();
           onEdit(entry);
         }
@@ -41,10 +51,20 @@ function JournalEntryComponent({ entry, onEdit, onDelete }: JournalEntryProps) {
     >
       <div className="flex items-start justify-between mb-2">
         <div className="flex items-center gap-2">
+          {entry.type === 'audio' && (
+            <div className="flex items-center text-blue-600" aria-label="Audio entry">
+              <span className="text-lg">🎤</span>
+              <span className="text-sm font-medium ml-1">
+                Audio{entry.duration ? ` (${formatDuration(entry.duration)})` : ''}
+              </span>
+            </div>
+          )}
           {entry.isDraft && (
             <div className="flex items-center text-amber-600" aria-label="Draft entry">
               <span className="text-lg">📝</span>
-              <span className="text-sm font-medium ml-1">Draft - Click to edit</span>
+              <span className="text-sm font-medium ml-1">
+                Draft{entry.type === 'text' ? ' - Click to edit' : ''}
+              </span>
             </div>
           )}
         </div>
@@ -76,12 +96,36 @@ function JournalEntryComponent({ entry, onEdit, onDelete }: JournalEntryProps) {
           </time>
         </div>
       </div>
-      <div className="prose prose-sm max-w-none">
-        <p className="text-gray-800 leading-relaxed">{entry.content}</p>
-      </div>
+
+      {entry.type === 'audio' && entry.audioUrl ? (
+        <div className="mb-3">
+          <audio
+            controls
+            src={entry.audioUrl}
+            className="w-full"
+            aria-label={`Audio recording${entry.duration ? `, duration ${formatDuration(entry.duration)}` : ''}`}
+          >
+            Your browser does not support the audio element.
+          </audio>
+          {entry.content && (
+            <div className="mt-3 p-3 bg-gray-50 rounded-md">
+              <p className="text-sm text-gray-600 mb-1">Transcript:</p>
+              <p className="text-gray-800">{entry.content}</p>
+            </div>
+          )}
+        </div>
+      ) : (
+        <div className="prose prose-sm max-w-none">
+          <p className="text-gray-800 leading-relaxed">{entry.content}</p>
+        </div>
+      )}
+
       {entry.isDraft && (
         <p className="text-sm text-amber-700 mt-2 italic">
-          Click anywhere on this draft to edit it, or use the delete button to remove it
+          {entry.type === 'text'
+            ? 'Click anywhere on this draft to edit it, or use the delete button to remove it'
+            : 'This is a draft audio entry. Use the delete button to remove it if needed.'
+          }
         </p>
       )}
     </article>
@@ -98,6 +142,7 @@ export default function Home() {
   const [lastSavedDraft, setLastSavedDraft] = useState<string>("");
   const [isAutoSaving, setIsAutoSaving] = useState(false);
   const [editingDraftId, setEditingDraftId] = useState<string | null>(null);
+  const [inputMode, setInputMode] = useState<'text' | 'audio'>('text');
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const autoSaveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -140,6 +185,37 @@ export default function Home() {
     } catch (error) {
       console.error('Error deleting draft:', error);
       setError('Unable to delete draft. Please check your internet connection and try again.');
+    }
+  };
+
+  const handleAudioRecorded = async (audioBlob: Blob, duration: number) => {
+    setIsSubmitting(true);
+    setError(null);
+    setSuccessMessage(null);
+
+    try {
+      const formData = new FormData();
+      formData.append('audio', audioBlob, 'recording.webm');
+      formData.append('duration', duration.toString());
+      formData.append('type', 'audio');
+
+      const response = await fetch('http://localhost:3001/journal-entries/audio', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        const newEntry = await response.json();
+        setEntries(prev => [newEntry, ...prev]);
+        setSuccessMessage('Your audio entry has been saved successfully.');
+      } else {
+        setError('Failed to save your audio entry. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error saving audio entry:', error);
+      setError('Unable to save your audio entry. Please check your internet connection and try again.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -323,55 +399,108 @@ export default function Home() {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-            <div>
-              <label htmlFor="content" className="block text-sm font-medium text-gray-700 mb-2">
-                How are you feeling today? <span aria-label="required" className="text-red-500">*</span>
-              </label>
-              <div className="flex justify-between items-start mb-2">
-                <p id="content-description" className="text-sm text-gray-600">
-                  Share your thoughts, feelings, or experiences. This information will help track your wellness journey.
-                </p>
-                {isAutoSaving && (
-                  <div className="flex items-center text-sm text-blue-600" role="status" aria-live="polite">
-                    <span className="animate-pulse mr-1">💾</span>
-                    <span>Saving draft...</span>
-                  </div>
-                )}
+          {/* Input Mode Selection */}
+          <div className="mb-6">
+            <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg">
+              <button
+                type="button"
+                onClick={() => setInputMode('text')}
+                className={`flex-1 flex items-center justify-center px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                  inputMode === 'text'
+                    ? 'bg-white text-gray-900 shadow-sm'
+                    : 'text-gray-500 hover:text-gray-700'
+                }`}
+                aria-pressed={inputMode === 'text'}
+              >
+                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clipRule="evenodd" />
+                </svg>
+                Text Entry
+              </button>
+              <button
+                type="button"
+                onClick={() => setInputMode('audio')}
+                className={`flex-1 flex items-center justify-center px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                  inputMode === 'audio'
+                    ? 'bg-white text-gray-900 shadow-sm'
+                    : 'text-gray-500 hover:text-gray-700'
+                }`}
+                aria-pressed={inputMode === 'audio'}
+              >
+                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z" clipRule="evenodd" />
+                </svg>
+                Voice Recording
+              </button>
+            </div>
+          </div>
+
+          {inputMode === 'text' ? (
+            <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+              <div>
+                <label htmlFor="content" className="block text-sm font-medium text-gray-700 mb-2">
+                  How are you feeling today? <span aria-label="required" className="text-red-500">*</span>
+                </label>
+                <div className="flex justify-between items-start mb-2">
+                  <p id="content-description" className="text-sm text-gray-600">
+                    Share your thoughts, feelings, or experiences. This information will help track your wellness journey.
+                  </p>
+                  {isAutoSaving && (
+                    <div className="flex items-center text-sm text-blue-600" role="status" aria-live="polite">
+                      <span className="animate-pulse mr-1">💾</span>
+                      <span>Saving draft...</span>
+                    </div>
+                  )}
+                </div>
+                <textarea
+                  ref={textareaRef}
+                  id="content"
+                  name="content"
+                  value={content}
+                  onChange={(e) => setContent(e.target.value)}
+                  rows={4}
+                  required
+                  aria-required="true"
+                  aria-describedby="content-description"
+                  aria-invalid={error ? 'true' : 'false'}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-colors duration-200"
+                  placeholder="Share your thoughts, feelings, or experiences..."
+                  disabled={isSubmitting}
+                />
               </div>
-              <textarea
-                ref={textareaRef}
-                id="content"
-                name="content"
-                value={content}
-                onChange={(e) => setContent(e.target.value)}
-                rows={4}
-                required
-                aria-required="true"
-                aria-describedby="content-description"
-                aria-invalid={error ? 'true' : 'false'}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-colors duration-200"
-                placeholder="Share your thoughts, feelings, or experiences..."
+
+              <button
+                type="submit"
+                disabled={isSubmitting || !content.trim()}
+                aria-describedby={isSubmitting ? "submit-status" : undefined}
+                className="w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-blue-600 transition-colors duration-200 font-medium"
+              >
+                {isSubmitting ? (
+                  <>
+                    <span aria-hidden="true">⏳ </span>
+                    <span id="submit-status">Saving your entry...</span>
+                  </>
+                ) : (
+                  'Save Entry'
+                )}
+              </button>
+            </form>
+          ) : (
+            <div className="space-y-4">
+              <div>
+                <h2 className="block text-sm font-medium text-gray-700 mb-2">
+                  Record your voice entry
+                </h2>
+                <p className="text-sm text-gray-600 mb-4">
+                  Record how you're feeling today. Your audio will be saved and can be transcribed for analysis.
+                </p>
+              </div>
+              <AudioRecorder
+                onAudioRecorded={handleAudioRecorded}
                 disabled={isSubmitting}
               />
             </div>
-
-            <button
-              type="submit"
-              disabled={isSubmitting || !content.trim()}
-              aria-describedby={isSubmitting ? "submit-status" : undefined}
-              className="w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-blue-600 transition-colors duration-200 font-medium"
-            >
-              {isSubmitting ? (
-                <>
-                  <span aria-hidden="true">⏳ </span>
-                  <span id="submit-status">Saving your entry...</span>
-                </>
-              ) : (
-                'Save Entry'
-              )}
-            </button>
-          </form>
+          )}
         </div>
 
         {isLoading ? (

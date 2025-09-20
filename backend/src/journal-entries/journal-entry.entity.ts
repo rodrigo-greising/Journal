@@ -8,6 +8,15 @@ export class JournalEntry {
   @Column('text')
   content: string;
 
+  @Column({ type: 'varchar', default: 'text' })
+  type: 'text' | 'audio';
+
+  @Column({ type: 'varchar', nullable: true })
+  audioUrl?: string;
+
+  @Column({ type: 'integer', nullable: true })
+  duration?: number;
+
   @Column({ default: false })
   isDraft: boolean;
 
