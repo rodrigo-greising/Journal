@@ -8,6 +8,7 @@ export interface AudioRecordingState {
   audioUrl: string | null;
   error: string | null;
   isSupported: boolean;
+  stream: MediaStream | null;
 }
 
 export interface AudioRecordingControls {
@@ -25,6 +26,7 @@ export function useAudioRecording(): AudioRecordingState & AudioRecordingControl
   const [audioBlob, setAudioBlob] = useState<Blob | null>(null);
   const [audioUrl, setAudioUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [stream, setStream] = useState<MediaStream | null>(null);
 
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const streamRef = useRef<MediaStream | null>(null);
@@ -56,7 +58,7 @@ export function useAudioRecording(): AudioRecordingState & AudioRecordingControl
 
     try {
       setError(null);
-      const stream = await navigator.mediaDevices.getUserMedia({
+      const mediaStream = await navigator.mediaDevices.getUserMedia({
         audio: {
           echoCancellation: true,
           noiseSuppression: true,
@@ -64,10 +66,11 @@ export function useAudioRecording(): AudioRecordingState & AudioRecordingControl
         }
       });
 
-      streamRef.current = stream;
+      streamRef.current = mediaStream;
+      setStream(mediaStream);
       chunksRef.current = [];
 
-      const mediaRecorder = new MediaRecorder(stream, {
+      const mediaRecorder = new MediaRecorder(mediaStream, {
         mimeType: MediaRecorder.isTypeSupported('audio/webm') ? 'audio/webm' : 'audio/mp4'
       });
 
@@ -90,6 +93,7 @@ export function useAudioRecording(): AudioRecordingState & AudioRecordingControl
         if (streamRef.current) {
           streamRef.current.getTracks().forEach(track => track.stop());
           streamRef.current = null;
+          setStream(null);
         }
       };
 
@@ -158,6 +162,7 @@ export function useAudioRecording(): AudioRecordingState & AudioRecordingControl
     audioUrl,
     error,
     isSupported,
+    stream,
     startRecording,
     stopRecording,
     pauseRecording,

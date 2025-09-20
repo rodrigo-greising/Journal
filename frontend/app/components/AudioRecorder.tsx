@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAudioRecording } from '../hooks/useAudioRecording';
+import { AudioWaveform } from './AudioWaveform';
 
 interface AudioRecorderProps {
   onAudioRecorded: (audioBlob: Blob, duration: number) => void;
@@ -21,6 +22,7 @@ export function AudioRecorder({ onAudioRecorded, disabled = false }: AudioRecord
     audioUrl,
     error,
     isSupported,
+    stream,
     startRecording,
     stopRecording,
     pauseRecording,
@@ -93,40 +95,54 @@ export function AudioRecorder({ onAudioRecorded, disabled = false }: AudioRecord
       )}
 
       {isRecording && (
-        <div className="flex justify-center space-x-2">
-          {!isPaused ? (
+        <div className="space-y-4">
+          {/* Waveform Visualization */}
+          <div className="flex justify-center">
+            <AudioWaveform
+              stream={stream}
+              isRecording={isRecording}
+              isPaused={isPaused}
+              width={320}
+              height={80}
+            />
+          </div>
+
+          {/* Recording Controls */}
+          <div className="flex justify-center space-x-2">
+            {!isPaused ? (
+              <button
+                onClick={pauseRecording}
+                className="inline-flex items-center px-3 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
+                aria-label="Pause recording"
+              >
+                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" />
+                </svg>
+                Pause
+              </button>
+            ) : (
+              <button
+                onClick={resumeRecording}
+                className="inline-flex items-center px-3 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
+                aria-label="Resume recording"
+              >
+                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                </svg>
+                Resume
+              </button>
+            )}
             <button
-              onClick={pauseRecording}
-              className="inline-flex items-center px-3 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
-              aria-label="Pause recording"
+              onClick={stopRecording}
+              className="inline-flex items-center px-3 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors"
+              aria-label="Stop recording"
             >
               <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" />
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8 7a1 1 0 00-1 1v4a1 1 0 001 1h4a1 1 0 001-1V8a1 1 0 00-1-1H8z" clipRule="evenodd" />
               </svg>
-              Pause
+              Stop
             </button>
-          ) : (
-            <button
-              onClick={resumeRecording}
-              className="inline-flex items-center px-3 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
-              aria-label="Resume recording"
-            >
-              <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-              </svg>
-              Resume
-            </button>
-          )}
-          <button
-            onClick={stopRecording}
-            className="inline-flex items-center px-3 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors"
-            aria-label="Stop recording"
-          >
-            <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8 7a1 1 0 00-1 1v4a1 1 0 001 1h4a1 1 0 001-1V8a1 1 0 00-1-1H8z" clipRule="evenodd" />
-            </svg>
-            Stop
-          </button>
+          </div>
         </div>
       )}
 
