@@ -13,7 +13,7 @@ export interface ConsistencyTestResult {
     energyLevelVariance?: number;
     sentimentConsistency?: number;
     emotionsConsistency?: number;
-    foodGroupsConsistency?: number;
+    foodMentionsConsistency?: number;
     overallConsistency: number;
   };
   recommendations: string[];
@@ -25,7 +25,7 @@ export class ConsistencyTestingService {
 
   async testMoodConsistency(
     entryText: string,
-    runs: number = 5
+    runs: number = 5,
   ): Promise<ConsistencyTestResult> {
     const results = [];
 
@@ -33,7 +33,7 @@ export class ConsistencyTestingService {
       const result = await this.openaiService.analyzeMood(
         entryText,
         `consistency-test-${Date.now()}-${i}`,
-        'consistency-tester'
+        'consistency-tester',
       );
       results.push(result);
     }
@@ -53,7 +53,7 @@ export class ConsistencyTestingService {
 
   async testEnergyConsistency(
     entryText: string,
-    runs: number = 5
+    runs: number = 5,
   ): Promise<ConsistencyTestResult> {
     const results = [];
 
@@ -61,7 +61,7 @@ export class ConsistencyTestingService {
       const result = await this.openaiService.analyzeEnergy(
         entryText,
         `consistency-test-${Date.now()}-${i}`,
-        'consistency-tester'
+        'consistency-tester',
       );
       results.push(result);
     }
@@ -81,7 +81,7 @@ export class ConsistencyTestingService {
 
   async testNutritionConsistency(
     entryText: string,
-    runs: number = 5
+    runs: number = 5,
   ): Promise<ConsistencyTestResult> {
     const results = [];
 
@@ -89,7 +89,7 @@ export class ConsistencyTestingService {
       const result = await this.openaiService.analyzeNutrition(
         entryText,
         `consistency-test-${Date.now()}-${i}`,
-        'consistency-tester'
+        'consistency-tester',
       );
       results.push(result);
     }
@@ -109,7 +109,7 @@ export class ConsistencyTestingService {
 
   async testTriggersConsistency(
     entryText: string,
-    runs: number = 5
+    runs: number = 5,
   ): Promise<ConsistencyTestResult> {
     const results = [];
 
@@ -117,7 +117,7 @@ export class ConsistencyTestingService {
       const result = await this.openaiService.analyzeTriggers(
         entryText,
         `consistency-test-${Date.now()}-${i}`,
-        'consistency-tester'
+        'consistency-tester',
       );
       results.push(result);
     }
@@ -136,21 +136,27 @@ export class ConsistencyTestingService {
   }
 
   private calculateMoodConsistencyMetrics(results: any[]) {
-    const moodScales = results.map(r => r.moodScale);
-    const sentiments = results.map(r => r.sentiment);
-    const emotions = results.map(r => r.emotions || []);
+    const moodScales = results.map((r) => r.moodScale);
+    const sentiments = results.map((r) => r.sentiment);
+    const emotions = results.map((r) => r.emotions || []);
 
-    const meanMoodScale = moodScales.reduce((a, b) => a + b, 0) / moodScales.length;
+    const meanMoodScale =
+      moodScales.reduce((a, b) => a + b, 0) / moodScales.length;
     const moodScaleVariance = this.calculateVariance(moodScales);
 
     // Sentiment consistency: percentage of results with the same sentiment
     const sentimentMode = this.findMode(sentiments);
-    const sentimentConsistency = sentiments.filter(s => s === sentimentMode).length / sentiments.length;
+    const sentimentConsistency =
+      sentiments.filter((s) => s === sentimentMode).length / sentiments.length;
 
     // Emotions consistency: average overlap between emotion lists
     const emotionsConsistency = this.calculateEmotionsOverlap(emotions);
 
-    const overallConsistency = (sentimentConsistency + emotionsConsistency + (1 - Math.min(moodScaleVariance / 4, 1))) / 3;
+    const overallConsistency =
+      (sentimentConsistency +
+        emotionsConsistency +
+        (1 - Math.min(moodScaleVariance / 4, 1))) /
+      3;
 
     return {
       meanMoodScale: Math.round(meanMoodScale * 10) / 10,
@@ -162,8 +168,9 @@ export class ConsistencyTestingService {
   }
 
   private calculateEnergyConsistencyMetrics(results: any[]) {
-    const energyLevels = results.map(r => r.energyLevel);
-    const meanEnergyLevel = energyLevels.reduce((a, b) => a + b, 0) / energyLevels.length;
+    const energyLevels = results.map((r) => r.energyLevel);
+    const meanEnergyLevel =
+      energyLevels.reduce((a, b) => a + b, 0) / energyLevels.length;
     const energyLevelVariance = this.calculateVariance(energyLevels);
 
     const overallConsistency = 1 - Math.min(energyLevelVariance / 4, 1);
@@ -176,17 +183,17 @@ export class ConsistencyTestingService {
   }
 
   private calculateNutritionConsistencyMetrics(results: any[]) {
-    const foodGroups = results.map(r => r.foodGroups || []);
-    const foodGroupsConsistency = this.calculateArrayOverlap(foodGroups);
+    const foodMentions = results.map((r) => r.foodMentions || []);
+    const foodMentionsConsistency = this.calculateArrayOverlap(foodMentions);
 
     return {
-      foodGroupsConsistency: Math.round(foodGroupsConsistency * 100) / 100,
-      overallConsistency: Math.round(foodGroupsConsistency * 100) / 100,
+      foodMentionsConsistency: Math.round(foodMentionsConsistency * 100) / 100,
+      overallConsistency: Math.round(foodMentionsConsistency * 100) / 100,
     };
   }
 
   private calculateTriggersConsistencyMetrics(results: any[]) {
-    const stressors = results.map(r => r.stressor || r.stressors || []);
+    const stressors = results.map((r) => r.stressor || r.stressors || []);
     const stressorsConsistency = this.calculateArrayOverlap(stressors);
 
     return {
@@ -196,7 +203,7 @@ export class ConsistencyTestingService {
 
   private calculateVariance(numbers: number[]): number {
     const mean = numbers.reduce((a, b) => a + b, 0) / numbers.length;
-    const squaredDiffs = numbers.map(n => Math.pow(n - mean, 2));
+    const squaredDiffs = numbers.map((n) => Math.pow(n - mean, 2));
     return squaredDiffs.reduce((a, b) => a + b, 0) / numbers.length;
   }
 
@@ -224,7 +231,10 @@ export class ConsistencyTestingService {
 
     for (let i = 0; i < emotionArrays.length; i++) {
       for (let j = i + 1; j < emotionArrays.length; j++) {
-        const overlap = this.calculateJaccardSimilarity(emotionArrays[i], emotionArrays[j]);
+        const overlap = this.calculateJaccardSimilarity(
+          emotionArrays[i],
+          emotionArrays[j],
+        );
         totalOverlap += overlap;
         comparisons++;
       }
@@ -251,10 +261,10 @@ export class ConsistencyTestingService {
   }
 
   private calculateJaccardSimilarity(arr1: string[], arr2: string[]): number {
-    const set1 = new Set(arr1.map(s => s.toLowerCase()));
-    const set2 = new Set(arr2.map(s => s.toLowerCase()));
+    const set1 = new Set(arr1.map((s) => s.toLowerCase()));
+    const set2 = new Set(arr2.map((s) => s.toLowerCase()));
 
-    const intersection = new Set([...set1].filter(x => set2.has(x)));
+    const intersection = new Set([...set1].filter((x) => set2.has(x)));
     const union = new Set([...set1, ...set2]);
 
     return union.size === 0 ? 1 : intersection.size / union.size;
@@ -264,23 +274,33 @@ export class ConsistencyTestingService {
     const recommendations: string[] = [];
 
     if (metrics.moodScaleVariance > 2) {
-      recommendations.push('Mood scale variance is high (>2 points). Consider lowering temperature or adding more specific mood anchors.');
+      recommendations.push(
+        'Mood scale variance is high (>2 points). Consider lowering temperature or adding more specific mood anchors.',
+      );
     }
 
     if (metrics.sentimentConsistency < 0.8) {
-      recommendations.push('Sentiment classification is inconsistent (<80%). Review sentiment thresholds in the prompt.');
+      recommendations.push(
+        'Sentiment classification is inconsistent (<80%). Review sentiment thresholds in the prompt.',
+      );
     }
 
     if (metrics.emotionsConsistency < 0.6) {
-      recommendations.push('Emotion detection varies significantly (<60% overlap). Consider providing a standardized emotion list.');
+      recommendations.push(
+        'Emotion detection varies significantly (<60% overlap). Consider providing a standardized emotion list.',
+      );
     }
 
     if (metrics.overallConsistency < 0.7) {
-      recommendations.push('Overall mood analysis consistency is below 70%. Consider prompt engineering improvements.');
+      recommendations.push(
+        'Overall mood analysis consistency is below 70%. Consider prompt engineering improvements.',
+      );
     }
 
     if (recommendations.length === 0) {
-      recommendations.push('Mood analysis consistency is acceptable. Continue monitoring.');
+      recommendations.push(
+        'Mood analysis consistency is acceptable. Continue monitoring.',
+      );
     }
 
     return recommendations;
@@ -290,15 +310,21 @@ export class ConsistencyTestingService {
     const recommendations: string[] = [];
 
     if (metrics.energyLevelVariance > 2) {
-      recommendations.push('Energy level variance is high (>2 points). Consider more specific energy level descriptions.');
+      recommendations.push(
+        'Energy level variance is high (>2 points). Consider more specific energy level descriptions.',
+      );
     }
 
     if (metrics.overallConsistency < 0.7) {
-      recommendations.push('Energy analysis consistency is below 70%. Consider prompt refinements.');
+      recommendations.push(
+        'Energy analysis consistency is below 70%. Consider prompt refinements.',
+      );
     }
 
     if (recommendations.length === 0) {
-      recommendations.push('Energy analysis consistency is acceptable. Continue monitoring.');
+      recommendations.push(
+        'Energy analysis consistency is acceptable. Continue monitoring.',
+      );
     }
 
     return recommendations;
@@ -307,12 +333,16 @@ export class ConsistencyTestingService {
   private generateNutritionRecommendations(metrics: any): string[] {
     const recommendations: string[] = [];
 
-    if (metrics.foodGroupsConsistency < 0.7) {
-      recommendations.push('Food group identification varies significantly (<70% overlap). Consider more specific food group definitions.');
+    if (metrics.foodMentionsConsistency < 0.7) {
+      recommendations.push(
+        'Food group identification varies significantly (<70% overlap). Consider more specific food group definitions.',
+      );
     }
 
     if (recommendations.length === 0) {
-      recommendations.push('Nutrition analysis consistency is acceptable. Continue monitoring.');
+      recommendations.push(
+        'Nutrition analysis consistency is acceptable. Continue monitoring.',
+      );
     }
 
     return recommendations;
@@ -322,11 +352,15 @@ export class ConsistencyTestingService {
     const recommendations: string[] = [];
 
     if (metrics.overallConsistency < 0.6) {
-      recommendations.push('Trigger identification varies significantly (<60% overlap). Consider more specific trigger categories.');
+      recommendations.push(
+        'Trigger identification varies significantly (<60% overlap). Consider more specific trigger categories.',
+      );
     }
 
     if (recommendations.length === 0) {
-      recommendations.push('Trigger analysis consistency is acceptable. Continue monitoring.');
+      recommendations.push(
+        'Trigger analysis consistency is acceptable. Continue monitoring.',
+      );
     }
 
     return recommendations;

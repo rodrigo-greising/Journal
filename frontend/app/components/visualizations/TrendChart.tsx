@@ -37,9 +37,10 @@ interface TrendChartProps {
   data: TrendData;
   viewMode: 'overview' | 'detailed';
   timeRange: TimeRange;
+  onDateSelect?: (date: string | null) => void;
 }
 
-export function TrendChart({ data, viewMode, timeRange }: TrendChartProps) {
+export function TrendChart({ data, viewMode, timeRange, onDateSelect }: TrendChartProps) {
   // Prepare chart data
   const dates = Array.from(
     new Set([
@@ -51,11 +52,20 @@ export function TrendChart({ data, viewMode, timeRange }: TrendChartProps) {
 
   const chartData = {
     labels: dates.map(date => {
-      const d = new Date(date);
+      // Parse date as UTC to avoid timezone issues
+      const d = new Date(date + 'T00:00:00.000Z');
       if (viewMode === 'detailed' || dates.length <= 30) {
-        return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+        return d.toLocaleDateString('en-US', { 
+          month: 'short', 
+          day: 'numeric',
+          timeZone: 'UTC'
+        });
       } else {
-        return d.toLocaleDateString('en-US', { month: 'short', year: '2-digit' });
+        return d.toLocaleDateString('en-US', { 
+          month: 'short', 
+          year: '2-digit',
+          timeZone: 'UTC'
+        });
       }
     }),
     datasets: [
@@ -71,6 +81,7 @@ export function TrendChart({ data, viewMode, timeRange }: TrendChartProps) {
         fill: false,
         pointRadius: viewMode === 'detailed' ? 4 : 2,
         pointHoverRadius: 6,
+        pointStyle: 'circle',
       },
       {
         label: 'Energy',
@@ -84,6 +95,7 @@ export function TrendChart({ data, viewMode, timeRange }: TrendChartProps) {
         fill: false,
         pointRadius: viewMode === 'detailed' ? 4 : 2,
         pointHoverRadius: 6,
+        pointStyle: 'circle',
       },
       {
         label: 'Sleep Quality',
@@ -97,6 +109,7 @@ export function TrendChart({ data, viewMode, timeRange }: TrendChartProps) {
         fill: false,
         pointRadius: viewMode === 'detailed' ? 4 : 2,
         pointHoverRadius: 6,
+        pointStyle: 'circle',
       },
     ],
   };
@@ -120,12 +133,14 @@ export function TrendChart({ data, viewMode, timeRange }: TrendChartProps) {
         intersect: false,
         callbacks: {
           title: (context) => {
-            const date = new Date(dates[context[0].dataIndex]);
+            // Parse date as UTC to avoid timezone issues
+            const date = new Date(dates[context[0].dataIndex] + 'T00:00:00.000Z');
             return date.toLocaleDateString('en-US', {
               weekday: 'long',
               year: 'numeric',
               month: 'long',
               day: 'numeric',
+              timeZone: 'UTC'
             });
           },
           label: (context) => {
@@ -173,6 +188,13 @@ export function TrendChart({ data, viewMode, timeRange }: TrendChartProps) {
         hoverBorderWidth: 2,
       },
     },
+    onClick: (event, elements) => {
+      if (elements.length > 0 && onDateSelect) {
+        const dataIndex = elements[0].index;
+        const selectedDate = dates[dataIndex];
+        onDateSelect(selectedDate);
+      }
+    },
   };
 
   if (!dates.length) {
@@ -194,6 +216,14 @@ export function TrendChart({ data, viewMode, timeRange }: TrendChartProps) {
       <div className="h-64 md:h-80">
         <Line data={chartData} options={options} />
       </div>
+      
+      {onDateSelect && (
+        <div className="mt-2 text-center">
+          <p className="text-sm text-gray-500">
+            Click on any data point to view journal entries for that date
+          </p>
+        </div>
+      )}
 
       {viewMode === 'detailed' && (
         <div className="mt-4 p-4 bg-gray-50 rounded-lg">

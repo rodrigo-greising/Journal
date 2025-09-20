@@ -56,10 +56,14 @@ export class DashboardService {
     // Process summary data
     const summary = this.processSummary(entries, analysisResults);
 
+    // Process journal entries with analysis data
+    const journalEntries = this.processJournalEntries(entries, analysisResults);
+
     return {
       trends,
       wordCloud,
       summary,
+      journalEntries,
     };
   }
 
@@ -93,6 +97,11 @@ export class DashboardService {
         if (result.result?.sleepQuality) {
           dayData.sleep = result.result.sleepQuality;
         }
+      } else if (
+        result.analysisType === 'sleep' &&
+        result.result?.sleepQuality
+      ) {
+        dayData.sleep = result.result.sleepQuality;
       }
     });
 
@@ -283,5 +292,57 @@ export class DashboardService {
       commonTriggers,
       positiveTrends,
     };
+  }
+
+  private processJournalEntries(
+    entries: JournalEntry[],
+    analysisResults: AnalysisResult[],
+  ) {
+    // Create a map of analysis results by journal entry ID
+    const analysisByEntryId = new Map<
+      string,
+      { mood?: number; energy?: number; sleep?: number }
+    >();
+
+    analysisResults.forEach((result) => {
+      const entryId = result.journalEntry.id;
+      if (!analysisByEntryId.has(entryId)) {
+        analysisByEntryId.set(entryId, {});
+      }
+
+      const entryAnalysis = analysisByEntryId.get(entryId)!;
+
+      if (result.analysisType === 'mood' && result.result?.moodScale) {
+        entryAnalysis.mood = result.result.moodScale;
+      } else if (
+        result.analysisType === 'energy' &&
+        result.result?.energyLevel
+      ) {
+        entryAnalysis.energy = result.result.energyLevel;
+        if (result.result?.sleepQuality) {
+          entryAnalysis.sleep = result.result.sleepQuality;
+        }
+      } else if (
+        result.analysisType === 'sleep' &&
+        result.result?.sleepQuality
+      ) {
+        entryAnalysis.sleep = result.result.sleepQuality;
+      }
+    });
+
+    // Convert entries to the required format
+    return entries.map((entry) => {
+      const date = entry.createdAt.toISOString().split('T')[0];
+      const analysis = analysisByEntryId.get(entry.id) || {};
+
+      return {
+        id: entry.id,
+        date,
+        content: entry.content,
+        mood: analysis.mood,
+        energy: analysis.energy,
+        sleep: analysis.sleep,
+      };
+    });
   }
 }

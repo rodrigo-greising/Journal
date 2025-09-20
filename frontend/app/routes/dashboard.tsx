@@ -29,6 +29,14 @@ interface DashboardData {
     commonTriggers: string[];
     positiveTrends: string[];
   };
+  journalEntries: Array<{
+    id: string;
+    date: string;
+    content: string;
+    mood?: number;
+    energy?: number;
+    sleep?: number;
+  }>;
 }
 
 interface TimeRange {
@@ -61,6 +69,7 @@ export default function Dashboard() {
     label: "Last 30 days"
   });
   const [viewMode, setViewMode] = useState<'overview' | 'detailed'>('overview');
+  const [selectedDate, setSelectedDate] = useState<string | null>(null);
 
   useEffect(() => {
     fetchDashboardData();
@@ -93,6 +102,15 @@ export default function Dashboard() {
     setTimeRange(newRange);
     setIsLoading(true);
   };
+
+  const handleDateSelect = (date: string | null) => {
+    setSelectedDate(date);
+  };
+
+  // Get journal entries for the selected date
+  const selectedDateEntries = selectedDate 
+    ? data?.journalEntries.filter(entry => entry.date === selectedDate) || []
+    : [];
 
   if (isLoading) {
     return (
@@ -258,6 +276,7 @@ export default function Dashboard() {
               data={data.trends}
               viewMode={viewMode}
               timeRange={timeRange}
+              onDateSelect={handleDateSelect}
             />
           </div>
 
@@ -274,6 +293,61 @@ export default function Dashboard() {
             />
           </div>
         </div>
+
+        {/* Journal Entries for Selected Date */}
+        {selectedDate && selectedDateEntries.length > 0 && (
+          <div className="mb-6">
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-lg font-semibold text-gray-900">
+                  Journal Entries for {new Date(selectedDate + 'T00:00:00.000Z').toLocaleDateString('en-US', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    timeZone: 'UTC'
+                  })}
+                </h2>
+                <button
+                  onClick={() => setSelectedDate(null)}
+                  className="text-gray-400 hover:text-gray-600 transition-colors"
+                  aria-label="Close entries view"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              
+              <div className="space-y-4">
+                {selectedDateEntries.map((entry) => (
+                  <div key={entry.id} className="border border-gray-200 rounded-lg p-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex space-x-4 text-sm">
+                        {entry.mood !== undefined && (
+                          <span className="text-blue-600 font-medium">
+                            Mood: {entry.mood}/10
+                          </span>
+                        )}
+                        {entry.energy !== undefined && (
+                          <span className="text-yellow-600 font-medium">
+                            Energy: {entry.energy}/10
+                          </span>
+                        )}
+                        {entry.sleep !== undefined && (
+                          <span className="text-purple-600 font-medium">
+                            Sleep: {entry.sleep}/10
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <p className="text-gray-700 leading-relaxed">{entry.content}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Detailed Views (only in detailed mode) */}
         {viewMode === 'detailed' && (

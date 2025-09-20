@@ -12,4 +12,12 @@ export interface DashboardData {
     commonTriggers: string[];
     positiveTrends: string[];
   };
+  journalEntries: Array<{
+    id: string;
+    date: string;
+    content: string;
+    mood?: number;
+    energy?: number;
+    sleep?: number;
+  }>;
 }

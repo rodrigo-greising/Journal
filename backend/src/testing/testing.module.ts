@@ -22,7 +22,11 @@ import { OpenAIModule } from '../openai/openai.module';
     LLMEvaluationService,
     ConsistencyTestingService,
   ],
-  controllers: [TestingController, LLMEvaluationController, ConsistencyTestingController],
+  controllers: [
+    TestingController,
+    LLMEvaluationController,
+    ConsistencyTestingController,
+  ],
   exports: [
     DatabaseCleanupService,
     TestDataSeederService,

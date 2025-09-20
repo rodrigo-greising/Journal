@@ -28,11 +28,20 @@ export interface TriggerAnalysisConfig {
   extractCopingStrategies: boolean;
 }
 
+export interface SleepAnalysisConfig {
+  type: 'sleep';
+  extractSleepQuality: boolean;
+  extractSleepDuration: boolean;
+  extractSleepPatterns: boolean;
+  extractSleepDisruptions: boolean;
+}
+
 export type AnalysisConfig =
   | MoodAnalysisConfig
   | EnergyAnalysisConfig
   | NutritionAnalysisConfig
-  | TriggerAnalysisConfig;
+  | TriggerAnalysisConfig
+  | SleepAnalysisConfig;
 
 export interface MoodAnalysisResult {
   sentiment: 'positive' | 'negative' | 'neutral';
@@ -49,7 +58,7 @@ export interface EnergyAnalysisResult {
 }
 
 export interface NutritionAnalysisResult {
-  foodGroups: string[]; // Changed from foodMentions to foodGroups
+  foodMentions: string[]; // Changed back to foodMentions to match frontend
   estimatedCalories?: number;
   macros?: {
     protein?: number;
@@ -66,5 +75,13 @@ export interface TriggerAnalysisResult {
   riskFactors: string[];
   copingStrategies: string[];
   riskLevel: 'low' | 'medium' | 'high';
+  confidence: number;
+}
+
+export interface SleepAnalysisResult {
+  sleepQuality: number; // 1-10
+  sleepDuration?: number; // hours
+  sleepPatterns?: string[];
+  sleepDisruptions?: string[];
   confidence: number;
 }

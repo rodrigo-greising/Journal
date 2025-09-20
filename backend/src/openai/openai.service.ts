@@ -11,6 +11,7 @@ import {
   EnergyAnalysisResult,
   NutritionAnalysisResult,
   TriggerAnalysisResult,
+  SleepAnalysisResult,
 } from '../analysis/dto/analysis-config.dto';
 import { LangfuseService } from '../langfuse/langfuse.service';
 
@@ -30,7 +31,7 @@ const EnergyAnalysisSchema = z.object({
 });
 
 const NutritionAnalysisSchema = z.object({
-  foodGroups: z.array(z.string()), // Changed from foodMentions to foodGroups
+  foodMentions: z.array(z.string()), // Keep as foodMentions to match frontend
   estimatedCalories: z.number().nullable().optional(),
   macros: z
     .object({
@@ -52,6 +53,14 @@ const TriggerAnalysisSchema = z.object({
   confidence: z.number().min(0).max(1),
 });
 
+const SleepAnalysisSchema = z.object({
+  sleepQuality: z.number().min(1).max(10),
+  sleepDuration: z.number().nullable().optional(), // hours
+  sleepPatterns: z.array(z.string()).optional(),
+  sleepDisruptions: z.array(z.string()).optional(),
+  confidence: z.number().min(0).max(1),
+});
+
 @Injectable()
 export class OpenAIService {
   private llm: ChatOpenAI;
@@ -62,8 +71,8 @@ export class OpenAIService {
   ) {
     this.llm = new ChatOpenAI({
       apiKey: this.configService.get<string>('OPENAI_API_KEY'),
-      modelName: 'gpt-4o-mini',
-      temperature: 0.1,
+      modelName: 'gpt-5-nano-2025-08-07',
+      // Note: gpt-5-nano-2025-08-07 only supports default temperature (1), custom values are not supported
     });
   }
 
@@ -223,19 +232,11 @@ Journal entry: {content}
     const prompt = PromptTemplate.fromTemplate(`
 You are a healthcare AI that analyzes journal entries for nutrition and food-related information.
 
-FOOD GROUPS TO IDENTIFY:
-- Fruits: All fresh, dried, or processed fruits
-- Vegetables: All vegetables including leafy greens, root vegetables, etc.
-- Whole grains: Brown rice, quinoa, oats, whole wheat bread, etc.
-- Refined grains: White rice, white bread, pasta, cereals, etc.
-- Lean protein: Fish, chicken breast, tofu, legumes, eggs
-- Processed protein: Deli meats, hot dogs, fried meats
-- Healthy fats: Nuts, seeds, avocado, olive oil, fatty fish
-- Unhealthy fats: Fried foods, butter, processed snacks
-- Dairy: Milk, cheese, yogurt
-- Sugary foods: Candy, desserts, sweet beverages
-- Processed foods: Fast food, packaged snacks, convenience meals
-- Beverages: Water, coffee, tea, juice, soda, alcohol
+FOOD MENTIONS TO IDENTIFY:
+- Specific foods mentioned: List exact foods mentioned (e.g., "oatmeal", "grilled chicken", "salad")
+- Food categories: Group similar foods (e.g., "fruits", "vegetables", "whole grains")
+- Include both specific items and general categories
+- Examples: "oatmeal", "blueberries", "almonds", "grilled chicken", "salad", "quinoa", "salmon", "sweet potato"
 
 CALORIE ESTIMATION GUIDELINES:
 - Light meal: 200-400 calories
@@ -243,7 +244,18 @@ CALORIE ESTIMATION GUIDELINES:
 - Large meal: 700-1000+ calories
 - Snack: 50-200 calories
 
-Only provide calorie estimates when specific foods and portions are mentioned.
+MACRO ESTIMATION GUIDELINES:
+- Protein: Estimate grams based on protein sources (meat, fish, eggs, dairy, legumes)
+- Carbs: Estimate grams based on grains, fruits, vegetables, sugars
+- Fats: Estimate grams based on oils, nuts, avocados, fatty proteins
+
+MACRO EXAMPLES:
+- Grilled salmon (6oz): ~40g protein, ~0g carbs, ~15g fats
+- Quinoa (1 cup): ~8g protein, ~40g carbs, ~4g fats
+- Banana: ~1g protein, ~25g carbs, ~0g fats
+- Protein smoothie: ~25g protein, ~15g carbs, ~5g fats
+
+Only provide macro estimates when specific foods and reasonable portions are mentioned.
 
 {format_instructions}
 
@@ -319,5 +331,60 @@ Journal entry: {content}
     );
 
     return result as TriggerAnalysisResult; // Updated to use 'stressor' instead of 'stressors'
+  }
+
+  async analyzeSleep(
+    content: string,
+    journalEntryId?: string,
+    userId?: string,
+  ): Promise<SleepAnalysisResult> {
+    const parser = StructuredOutputParser.fromZodSchema(SleepAnalysisSchema);
+
+    const prompt = PromptTemplate.fromTemplate(`
+You are a healthcare AI that analyzes journal entries for sleep-related information.
+
+SLEEP QUALITY INDICATORS:
+- Sleep quality (1-10 scale): Based on mentions of restfulness, energy levels, sleep satisfaction
+- Sleep duration: Look for specific hours mentioned or duration descriptions
+- Sleep patterns: Regular bedtime, wake time, sleep schedule consistency
+- Sleep disruptions: Insomnia, waking up frequently, nightmares, external disturbances
+
+SLEEP QUALITY SCALE:
+- 1-3: Poor sleep (insomnia, frequent waking, feeling exhausted)
+- 4-6: Fair sleep (some disruptions but generally restful)
+- 7-8: Good sleep (restful, adequate duration, minimal disruptions)
+- 9-10: Excellent sleep (deeply restful, perfect duration, no disruptions)
+
+{format_instructions}
+
+Journal entry: {content}
+`);
+
+    const chain = RunnableSequence.from([prompt, this.llm, parser]);
+
+    // Create Langfuse callback handler for tracing
+    const callbackHandler = journalEntryId
+      ? this.langfuseService.createAnalysisCallbackHandler(
+          journalEntryId,
+          'sleep',
+          userId,
+        )
+      : this.langfuseService.createCallbackHandler(
+          `sleep-analysis-${Date.now()}`,
+          userId,
+          ['sleep-analysis'],
+        );
+
+    const result = await chain.invoke(
+      {
+        content,
+        format_instructions: parser.getFormatInstructions(),
+      },
+      {
+        callbacks: [callbackHandler],
+      },
+    );
+
+    return result as SleepAnalysisResult;
   }
 }

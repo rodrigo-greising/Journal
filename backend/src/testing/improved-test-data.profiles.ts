@@ -39,10 +39,12 @@ export interface TestJournalEntry {
 export const IMPROVED_TEST_PROFILES: TestProfile[] = [
   {
     name: 'addiction-recovery-realistic',
-    description: 'Realistic addiction recovery journey with varied language and situations',
+    description:
+      'Realistic addiction recovery journey with varied language and situations',
     entries: [
       {
-        content: 'Day 1. Hands shaking. Made eggs and toast. Dave destroyed my presentation today - felt my chest get tight, wanted a drink so bad. Called Sarah instead.',
+        content:
+          'Day 1. Hands shaking. Made eggs and toast. Dave destroyed my presentation today - felt my chest get tight, wanted a drink so bad. Called Sarah instead.',
         type: 'text',
         dateOffset: -30,
         expectedAnalysis: {
@@ -66,7 +68,8 @@ export const IMPROVED_TEST_PROFILES: TestProfile[] = [
         },
       },
       {
-        content: 'Been 4 days. Woke up at 3am drenched in sweat again but managed to get back to sleep. Had a really good breakfast - oatmeal with blueberries and some orange juice. Energy is all over the place. Went for a walk around the block twice. Still getting random waves of wanting to drink but they pass quicker now. Jim from AA said that was normal. Meeting tonight helped.',
+        content:
+          'Been 4 days. Woke up at 3am drenched in sweat again but managed to get back to sleep. Had a really good breakfast - oatmeal with blueberries and some orange juice. Energy is all over the place. Went for a walk around the block twice. Still getting random waves of wanting to drink but they pass quicker now. Jim from AA said that was normal. Meeting tonight helped.',
         type: 'text',
         dateOffset: -27,
         expectedAnalysis: {
@@ -91,7 +94,8 @@ export const IMPROVED_TEST_PROFILES: TestProfile[] = [
         },
       },
       {
-        content: 'Two weeks! Crazy how different I feel. Sleep is getting better - only woke up once last night instead of three times. Had a massive lunch at that new Mediterranean place - grilled chicken, rice, tons of vegetables. Feeling strong today. Even tackled that project I\'ve been avoiding. No cravings since yesterday morning.',
+        content:
+          "Two weeks! Crazy how different I feel. Sleep is getting better - only woke up once last night instead of three times. Had a massive lunch at that new Mediterranean place - grilled chicken, rice, tons of vegetables. Feeling strong today. Even tackled that project I've been avoiding. No cravings since yesterday morning.",
         type: 'text',
         dateOffset: -16,
         expectedAnalysis: {
@@ -116,7 +120,8 @@ export const IMPROVED_TEST_PROFILES: TestProfile[] = [
         },
       },
       {
-        content: 'Rough patch yesterday and today. Mom\'s cancer results came back and it\'s not good news. Spent most of the day at the hospital. Barely ate - just grabbed a protein bar and some coffee. The old me would have gone straight to the liquor store. Instead I called my sponsor and we talked for an hour. Still hurting but I\'m sober.',
+        content:
+          "Rough patch yesterday and today. Mom's cancer results came back and it's not good news. Spent most of the day at the hospital. Barely ate - just grabbed a protein bar and some coffee. The old me would have gone straight to the liquor store. Instead I called my sponsor and we talked for an hour. Still hurting but I'm sober.",
         type: 'text',
         dateOffset: -8,
         expectedAnalysis: {
@@ -140,7 +145,8 @@ export const IMPROVED_TEST_PROFILES: TestProfile[] = [
         },
       },
       {
-        content: 'Month celebration at the diner with Tom and Sarah. Pancakes, bacon, the works. Feeling grateful and strong. Energy levels are stable now, sleeping through the night most days. Strange to think how different everything is from 30 days ago.',
+        content:
+          'Month celebration at the diner with Tom and Sarah. Pancakes, bacon, the works. Feeling grateful and strong. Energy levels are stable now, sleeping through the night most days. Strange to think how different everything is from 30 days ago.',
         type: 'text',
         dateOffset: -1,
         expectedAnalysis: {
@@ -168,10 +174,12 @@ export const IMPROVED_TEST_PROFILES: TestProfile[] = [
   },
   {
     name: 'nutrition-tracking-detailed',
-    description: 'Detailed nutrition tracking with varied meal descriptions and health focus',
+    description:
+      'Detailed nutrition tracking with varied meal descriptions and health focus',
     entries: [
       {
-        content: 'Starting this food journal thing my doctor recommended. Breakfast was rushed - just grabbed a banana and coffee on the way to work. Lunch was that quinoa salad from the place downstairs, pretty good actually. Dinner was pasta with marinara sauce and a side salad. Feeling okay energy-wise but definitely need to plan better.',
+        content:
+          'Starting this food journal thing my doctor recommended. Breakfast was rushed - just grabbed a banana and coffee on the way to work. Lunch was that quinoa salad from the place downstairs, pretty good actually. Dinner was pasta with marinara sauce and a side salad. Feeling okay energy-wise but definitely need to plan better.',
         type: 'text',
         dateOffset: -14,
         expectedAnalysis: {
@@ -185,12 +193,19 @@ export const IMPROVED_TEST_PROFILES: TestProfile[] = [
             fatigueIndicators: ['rushed morning'],
           },
           nutrition: {
-            foodMentions: ['fruits', 'caffeinated beverages', 'whole grains', 'vegetables', 'refined grains'],
+            foodMentions: [
+              'fruits',
+              'caffeinated beverages',
+              'whole grains',
+              'vegetables',
+              'refined grains',
+            ],
           },
         },
       },
       {
-        content: 'Much better day food-wise! Made overnight oats with Greek yogurt, chia seeds, and berries. Felt full and energized all morning. Lunch was a big salad with grilled salmon, avocado, and lots of colorful veggies. Snacked on almonds and an apple. Dinner was stir-fried tofu with brown rice and broccoli. Sleeping better too - got a solid 8 hours.',
+        content:
+          'Much better day food-wise! Made overnight oats with Greek yogurt, chia seeds, and berries. Felt full and energized all morning. Lunch was a big salad with grilled salmon, avocado, and lots of colorful veggies. Snacked on almonds and an apple. Dinner was stir-fried tofu with brown rice and broccoli. Sleeping better too - got a solid 8 hours.',
         type: 'text',
         dateOffset: -7,
         expectedAnalysis: {
@@ -205,12 +220,20 @@ export const IMPROVED_TEST_PROFILES: TestProfile[] = [
             sleepQuality: 8,
           },
           nutrition: {
-            foodMentions: ['whole grains', 'protein', 'healthy fats', 'fruits', 'vegetables', 'nuts'],
+            foodMentions: [
+              'whole grains',
+              'protein',
+              'healthy fats',
+              'fruits',
+              'vegetables',
+              'nuts',
+            ],
           },
         },
       },
       {
-        content: 'Ugh, total food disaster today. Overslept, skipped breakfast. Stress-ate a donut and large latte during the morning meeting. Lunch was fast food - burger, fries, soda. Felt gross and sluggish all afternoon. Tried to compensate with just a salad for dinner but I\'m still feeling guilty and low energy.',
+        content:
+          "Ugh, total food disaster today. Overslept, skipped breakfast. Stress-ate a donut and large latte during the morning meeting. Lunch was fast food - burger, fries, soda. Felt gross and sluggish all afternoon. Tried to compensate with just a salad for dinner but I'm still feeling guilty and low energy.",
         type: 'text',
         dateOffset: -3,
         expectedAnalysis: {
@@ -224,7 +247,12 @@ export const IMPROVED_TEST_PROFILES: TestProfile[] = [
             fatigueIndicators: ['poor food choices', 'sugar crash'],
           },
           nutrition: {
-            foodMentions: ['refined sugar', 'caffeinated beverages', 'processed foods', 'vegetables'],
+            foodMentions: [
+              'refined sugar',
+              'caffeinated beverages',
+              'processed foods',
+              'vegetables',
+            ],
           },
         },
       },
@@ -232,10 +260,12 @@ export const IMPROVED_TEST_PROFILES: TestProfile[] = [
   },
   {
     name: 'mental-health-varied',
-    description: 'Varied mental health entries with different triggers and coping strategies',
+    description:
+      'Varied mental health entries with different triggers and coping strategies',
     entries: [
       {
-        content: 'Therapy was intense today. We dug into some childhood stuff I haven\'t thought about in years. Dr. Martinez says it\'s normal to feel stirred up after sessions like this. My chest feels tight and I keep replaying conversations from when I was 12. The breathing exercises help a little. Ordered Thai food for dinner - needed some comfort tonight.',
+        content:
+          "Therapy was intense today. We dug into some childhood stuff I haven't thought about in years. Dr. Martinez says it's normal to feel stirred up after sessions like this. My chest feels tight and I keep replaying conversations from when I was 12. The breathing exercises help a little. Ordered Thai food for dinner - needed some comfort tonight.",
         type: 'text',
         dateOffset: -10,
         expectedAnalysis: {
@@ -258,7 +288,8 @@ export const IMPROVED_TEST_PROFILES: TestProfile[] = [
         },
       },
       {
-        content: 'Amazing day! The presentation went perfectly and my manager actually complimented my work in front of the whole team. Felt confident and capable for once. Celebrated with lunch at that new sushi place - the salmon was incredible. Energy feels sustainable today, not that jittery anxious energy I usually have. Even managed a 30-minute walk after dinner.',
+        content:
+          'Amazing day! The presentation went perfectly and my manager actually complimented my work in front of the whole team. Felt confident and capable for once. Celebrated with lunch at that new sushi place - the salmon was incredible. Energy feels sustainable today, not that jittery anxious energy I usually have. Even managed a 30-minute walk after dinner.',
         type: 'text',
         dateOffset: -7,
         expectedAnalysis: {
@@ -281,7 +312,8 @@ export const IMPROVED_TEST_PROFILES: TestProfile[] = [
         },
       },
       {
-        content: 'Panic attack during the grocery store trip. Started in the cereal aisle - suddenly couldn\'t breathe, felt like everyone was staring. Had to abandon my cart and sit in the car for 20 minutes doing the 4-7-8 breathing. Finally made it home but just ordered pizza instead of cooking. Hate that anxiety still controls me like this sometimes.',
+        content:
+          "Panic attack during the grocery store trip. Started in the cereal aisle - suddenly couldn't breathe, felt like everyone was staring. Had to abandon my cart and sit in the car for 20 minutes doing the 4-7-8 breathing. Finally made it home but just ordered pizza instead of cooking. Hate that anxiety still controls me like this sometimes.",
         type: 'text',
         dateOffset: -4,
         expectedAnalysis: {
@@ -304,7 +336,8 @@ export const IMPROVED_TEST_PROFILES: TestProfile[] = [
         },
       },
       {
-        content: 'Used the grounding technique when I felt anxiety creeping up at work today. 5 things I could see, 4 I could touch, 3 I could hear, 2 I could smell, 1 I could taste. It actually worked! Stayed present and finished the report without spiraling. Small victory but it feels huge. Made a nice dinner too - grilled chicken with roasted vegetables.',
+        content:
+          'Used the grounding technique when I felt anxiety creeping up at work today. 5 things I could see, 4 I could touch, 3 I could hear, 2 I could smell, 1 I could taste. It actually worked! Stayed present and finished the report without spiraling. Small victory but it feels huge. Made a nice dinner too - grilled chicken with roasted vegetables.',
         type: 'text',
         dateOffset: -1,
         expectedAnalysis: {

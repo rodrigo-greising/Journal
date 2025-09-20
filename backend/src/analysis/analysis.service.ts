@@ -98,6 +98,12 @@ export class AnalysisService {
             journalEntryId,
           );
           break;
+        case 'sleep':
+          result = await this.openaiService.analyzeSleep(
+            content,
+            journalEntryId,
+          );
+          break;
         default:
           throw new Error(`Unknown analysis type: ${analysisType}`);
       }
@@ -296,6 +302,22 @@ export class AnalysisBuilder {
     return this;
   }
 
+  withSleepAnalysis(
+    extractSleepQuality = true,
+    extractSleepDuration = true,
+    extractSleepPatterns = true,
+    extractSleepDisruptions = true,
+  ): this {
+    this.configs.push({
+      type: 'sleep',
+      extractSleepQuality,
+      extractSleepDuration,
+      extractSleepPatterns,
+      extractSleepDisruptions,
+    });
+    return this;
+  }
+
   async executeFor(journalEntryId: string): Promise<void> {
     const analysisTypes = this.configs.map((config) => config.type);
     await this.analysisService.queueAnalysisForEntry(
@@ -311,14 +333,28 @@ export class AnalysisBuilder {
   }
 
   getDefaultAnalysis(): this {
-    return this.withMoodAnalysis().withEnergyAnalysis();
+    return this.withMoodAnalysis()
+      .withEnergyAnalysis()
+      .withNutritionAnalysis()
+      .withSleepAnalysis();
   }
 
   getHealthcareAnalysis(): this {
-    return this.withMoodAnalysis().withEnergyAnalysis().withTriggerAnalysis();
+    return this.withMoodAnalysis()
+      .withEnergyAnalysis()
+      .withTriggerAnalysis()
+      .withSleepAnalysis();
   }
 
   getNutritionAnalysis(): this {
     return this.withMoodAnalysis().withEnergyAnalysis().withNutritionAnalysis();
+  }
+
+  getComprehensiveAnalysis(): this {
+    return this.withMoodAnalysis()
+      .withEnergyAnalysis()
+      .withNutritionAnalysis()
+      .withTriggerAnalysis()
+      .withSleepAnalysis();
   }
 }

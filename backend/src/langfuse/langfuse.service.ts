@@ -70,7 +70,7 @@ export class LangfuseService implements OnModuleInit, OnModuleDestroy {
    */
   createAnalysisCallbackHandler(
     journalEntryId: string,
-    analysisType: 'mood' | 'energy' | 'nutrition' | 'triggers',
+    analysisType: 'mood' | 'energy' | 'nutrition' | 'triggers' | 'sleep',
     userId?: string,
   ): CallbackHandler {
     return this.createCallbackHandler(
