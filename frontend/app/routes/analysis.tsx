@@ -238,11 +238,11 @@ function TriggerAnalysisCard({ result }: { result: any }) {
             {result.riskLevel}
           </span>
         </div>
-        {result.stressors && result.stressors.length > 0 && (
+        {result.stressor && result.stressor.length > 0 && (
           <div>
             <span className="text-sm text-red-700">Stressors:</span>
             <div className="flex flex-wrap gap-1 mt-1">
-              {result.stressors.map((stressor: string, index: number) => (
+              {result.stressor.map((stressor: string, index: number) => (
                 <span
                   key={index}
                   className="px-2 py-1 bg-red-100 text-red-800 rounded-full text-xs"

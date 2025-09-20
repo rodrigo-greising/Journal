@@ -6,6 +6,8 @@ import { JournalEntry } from '../journal-entries/journal-entry.entity';
 import { OpenAIService } from '../openai/openai.service';
 import { QueueService } from '../queue/queue.service';
 import { AnalysisConfig } from './dto/analysis-config.dto';
+import { readFile } from 'fs/promises';
+import { join } from 'path';
 
 @Injectable()
 export class AnalysisService {
@@ -155,10 +157,30 @@ export class AnalysisService {
   }
 
   private async transcribeAudio(audioUrl: string): Promise<string> {
-    // In a real implementation, you would fetch the audio file from storage
-    // For now, we'll return a placeholder
-    this.logger.warn(`Audio transcription not implemented for ${audioUrl}`);
-    return 'Audio transcription pending implementation';
+    try {
+      this.logger.log(`Starting audio transcription for ${audioUrl}`);
+      
+      // Extract filename from URL (e.g., "http://localhost:3001/uploads/audio/filename.webm" -> "filename.webm")
+      const filename = audioUrl.split('/').pop();
+      if (!filename) {
+        throw new Error(`Invalid audio URL: ${audioUrl}`);
+      }
+      
+      // Construct the file path
+      const filePath = join(process.cwd(), 'uploads', 'audio', filename);
+      
+      // Read the audio file
+      const audioBuffer = await readFile(filePath);
+      
+      // Transcribe using OpenAI service
+      const transcription = await this.openaiService.transcribeAudio(audioBuffer);
+      
+      this.logger.log(`Audio transcription completed for ${audioUrl}`);
+      return transcription;
+    } catch (error) {
+      this.logger.error(`Failed to transcribe audio ${audioUrl}:`, error);
+      throw new Error(`Audio transcription failed: ${error.message}`);
+    }
   }
 }
 

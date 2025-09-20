@@ -61,7 +61,7 @@ export interface NutritionAnalysisResult {
 }
 
 export interface TriggerAnalysisResult {
-  stressors: string[];
+  stressor: string[];
   cravings: string[];
   riskFactors: string[];
   copingStrategies: string[];

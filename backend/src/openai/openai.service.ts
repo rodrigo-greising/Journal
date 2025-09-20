@@ -36,7 +36,7 @@ const NutritionAnalysisSchema = z.object({
 });
 
 const TriggerAnalysisSchema = z.object({
-  stressors: z.array(z.string()),
+  stressor: z.array(z.string()),
   cravings: z.array(z.string()),
   riskFactors: z.array(z.string()),
   copingStrategies: z.array(z.string()),
@@ -217,6 +217,6 @@ Journal entry: {content}
       callbacks: [callbackHandler],
     });
 
-    return result as TriggerAnalysisResult;
+    return result as TriggerAnalysisResult; // Updated to use 'stressor' instead of 'stressors'
   }
 }
