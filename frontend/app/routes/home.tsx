@@ -379,12 +379,20 @@ export default function Home() {
         <div className="bg-white rounded-lg shadow-md p-6 mb-8">
           <div className="flex items-center justify-between mb-6">
             <h1 className="text-2xl font-bold text-gray-900">Health Journal</h1>
-            <a
-              href="/analysis"
-              className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center"
-            >
-              View Analysis →
-            </a>
+            <div className="flex items-center space-x-4">
+              <a
+                href="/dashboard"
+                className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center"
+              >
+                Dashboard →
+              </a>
+              <a
+                href="/analysis"
+                className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center"
+              >
+                Analysis →
+              </a>
+            </div>
           </div>
 
           {error && (
