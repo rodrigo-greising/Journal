@@ -1,4 +1,4 @@
-import { Injectable, Logger, OnModuleInit, OnModuleDestroy } from '@nestjs/common';
+import { Injectable, OnModuleInit } from '@nestjs/common';
 import { Queue, Worker } from 'bullmq';
 import { ConfigService } from '@nestjs/config';
 import { AnalysisType } from '../analysis/analysis-result.entity';
@@ -11,8 +11,7 @@ export interface AnalysisJobData {
 }
 
 @Injectable()
-export class QueueService implements OnModuleInit, OnModuleDestroy {
-  private readonly logger = new Logger(QueueService.name);
+export class QueueService implements OnModuleInit {
   private analysisQueue: Queue;
   private worker: Worker;
 
@@ -89,18 +88,5 @@ export class QueueService implements OnModuleInit, OnModuleDestroy {
 
   async cleanQueue(): Promise<void> {
     await this.analysisQueue.clean(24 * 60 * 60 * 1000, 100); // Clean jobs older than 24 hours
-  }
-
-  async onModuleDestroy() {
-    this.logger.log('Shutting down queue service...');
-    
-    try {
-      if (this.analysisQueue) {
-        await this.analysisQueue.close();
-        this.logger.log('Analysis queue closed');
-      }
-    } catch (error) {
-      this.logger.error('Error closing analysis queue:', error);
-    }
   }
 }
