@@ -4,6 +4,8 @@ import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { JournalEntriesModule } from './journal-entries/journal-entries.module';
+import { AnalysisModule } from './analysis/analysis.module';
+import { LangfuseModule } from './langfuse/langfuse.module';
 
 @Module({
   imports: [
@@ -21,6 +23,8 @@ import { JournalEntriesModule } from './journal-entries/journal-entries.module';
       synchronize: true, // Only for development
     }),
     JournalEntriesModule,
+    AnalysisModule,
+    LangfuseModule,
   ],
   controllers: [AppController],
   providers: [AppService],

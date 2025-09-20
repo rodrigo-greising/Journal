@@ -4,17 +4,26 @@ import { Repository } from 'typeorm';
 import { JournalEntry } from './journal-entry.entity';
 import { CreateJournalEntryDto } from './dto/create-journal-entry.dto';
 import { UpdateJournalEntryDto } from './dto/update-journal-entry.dto';
+import { AnalysisService } from '../analysis/analysis.service';
 
 @Injectable()
 export class JournalEntriesService {
   constructor(
     @InjectRepository(JournalEntry)
     private journalEntriesRepository: Repository<JournalEntry>,
+    private analysisService: AnalysisService,
   ) {}
 
   async create(createJournalEntryDto: CreateJournalEntryDto): Promise<JournalEntry> {
     const journalEntry = this.journalEntriesRepository.create(createJournalEntryDto);
-    return await this.journalEntriesRepository.save(journalEntry);
+    const savedEntry = await this.journalEntriesRepository.save(journalEntry);
+
+    // Queue automatic analysis for new entries
+    if (!savedEntry.isDraft) {
+      await this.queueDefaultAnalysis(savedEntry.id);
+    }
+
+    return savedEntry;
   }
 
   async findAll(): Promise<JournalEntry[]> {
@@ -49,9 +58,23 @@ export class JournalEntriesService {
     const draft = await this.findOne(id);
     if (draft && draft.isDraft) {
       draft.isDraft = false;
-      return await this.journalEntriesRepository.save(draft);
+      const publishedEntry = await this.journalEntriesRepository.save(draft);
+
+      // Queue automatic analysis for published entries
+      await this.queueDefaultAnalysis(publishedEntry.id);
+
+      return publishedEntry;
     }
     return null;
+  }
+
+  private async queueDefaultAnalysis(journalEntryId: string): Promise<void> {
+    try {
+      const builder = await this.analysisService.createAnalysisBuilder();
+      await builder.getDefaultAnalysis().executeFor(journalEntryId);
+    } catch (error) {
+      console.error('Failed to queue default analysis for entry:', journalEntryId, error);
+    }
   }
 
   async findOne(id: string): Promise<JournalEntry | null> {
