@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Param, Delete, Put, UseInterceptors, UploadedFile } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, Put, UseInterceptors, UploadedFile, BadRequestException } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { JournalEntriesService } from './journal-entries.service';
 import { CreateJournalEntryDto } from './dto/create-journal-entry.dto';
@@ -45,11 +45,19 @@ export class JournalEntriesController {
     @Body('type') type: string,
   ) {
     if (!file) {
-      throw new Error('No audio file uploaded');
+      throw new BadRequestException('No audio file uploaded');
+    }
+
+    if (!duration || duration.trim() === '') {
+      throw new BadRequestException('Duration is required');
+    }
+
+    const durationInSeconds = parseInt(duration, 10);
+    if (isNaN(durationInSeconds) || durationInSeconds <= 0) {
+      throw new BadRequestException('Duration must be a positive number');
     }
 
     const audioUrl = this.storageService.getAudioUrl(file.filename);
-    const durationInSeconds = parseInt(duration, 10);
 
     const createDto: CreateJournalEntryDto = {
       content: '', // Initially empty, will be filled by transcription later
