@@ -1,0 +1,35 @@
+{
+  "content": "The morning started with the mug clink and the blinds opening a fraction. Light pooled on the ceiling, and the air carried that first-day-of-quiet smell: coffee grounds, old soap, the faint tang of rain clinging to the window screens. The bed felt warm and a little too inviting, and I lingered there longer than intended, listening to the apartment settle—the fridge’s low hum, the distant rumble of a bus, the clock ticking away minutes with patient rhythm. Sleep had been fair, waking a couple times with a light fidget of dreams I couldn’t quite recall, then drifting back with ease. It left me rested enough to move, but not buoyant—an ordinary, workable baseline.\n\nI moved with small habitual motions—arms overhead, a slow roll of the shoulders, a yawn that tipped into a real breath. My mind didn’t race, which was exactly what I hoped after a few unsettled nights. Breakfast settled like an anchor: oats with blueberries, a spoon of peanut butter, a pinch of cinnamon, and a coffee tasting of roasted beans and warmth rather than haste. The kitchen smelled of a steady pace: not glamorous, not heroic, but sustainable. I added a splash of milk to soften the bite and sat with the bowl for a moment before the first bite. The oats were soft but offered a small resilience—absorbing the morning to carry me through a few hours of work without shouting for attention. Nutrition felt like a six out of ten today, steadying without ceremony.\n\nThe route to the day was deliberate but unremarkable. I walked to the train instead of riding, to feel the gravel bite a touch under my sneakers and listen to the city in a slower tempo. The street was quiet; a neighbor waved hello, a dog barked in the distance. The air smelled of damp earth and rain. The walk tuned my mood toward something steady, almost neutral. Energy felt average, about a five—a balance I’ve been seeking: able to sustain ordinary effort without tipping into fatigue or numbness.\n\nWork started with emails piling up and a list that grew longer the longer I stared at it. I’d tried shorter, focused bursts instead of long stretches, and today leaned into two twenty-five-minute sprints. The pace kept my mind from wandering into anxious corners, yielding progress rather than momentum. Stress hovered at a steady five, manageable, not crushing, something like a book I mean to finish but don’t feel compelled to finish tonight. A deadline loomed on the horizon, a path I could walk, step by step.\n\nMid-morning I slipped out for a quick walk; hallway air cooler than the office, the building with its own clock. Outside, a couple by a storefront, a cyclist threading through traffic, a bus sighing to a stop. I inhaled, present with the moment. The walk didn’t mend anything dramatic; it did what I needed—nudged energy up enough to loosen the tether to the chair, reminded my legs they could carry me further.\n\nLunch was a greens-and-chickpeas bowl with cucumbers, tomatoes, a squeeze of lemon, almonds for crunch, and a slice of whole-grain bread. I ate slowly, listening to cutlery on ceramic, office chatter nearby, rain tapping on the awning outside. A crisp apple followed, bright and simple. Afternoon energy dipped after the meal—the body rests after a good bite—so I kept a glass of water near and treated hydration as normal, not moral.\n\nA teammate call in the afternoon was productive in a quiet way. We clarified a tricky point, swapped ideas, and left with a concrete plan that eased lingering uncertainty. I asked a small but necessary question; the response offered practical reassurance rather than grand encouragement. The mood stayed steady, a six out of ten, with attention fixed on the next task rather than outcomes. My posture straightened a bit during the call, a sign of resolve rather than heroism.\n\nBack at the desk I let fatigue settle a moment before a quick stretch sequence—neck rolls, a waist twist, a gentle lower-back bend. The body remembered cues, and I felt steadier for it, a habit that fits the day’s pace. By late afternoon my eyes felt dry from the screen, the monitor bright, but the mind stayed on track, not sprinting or drifting.\n\nEvening arrived with the ritual of stepping away from work, not triumph but quiet relief that the day could end on a predictable note. I cooked something simple: salmon, roasted vegetables, quinoa, with olive oil and herbs. It wasn’t glamorous—salt in the air, the sizzle of fish, the oven’s hum. The salmon tasted clean, the vegetables caramelized, quinoa light and nutty. I ate slowly, savoring the contrast between the salmon’s tenderness and the greens’ bite, a reminder meals don’t need ceremony to count.\n\nAfter dinner I read with tea, the rain tapping on the window. The room cooled as the sun set. I read until sleep pressed, then jotted notes in this journal, translating the day’s quiet into words. Before bed I checked messages, cleared the last thoughts, and turned off the lamp with a soft sigh of completion. Sleep had its own little awakenings—the occasional memory of a conversation—but nothing alarming, nothing that shattered the calm I’d carried into the night. A few minutes of stillness, then rest.\n\nIf I name today with a label, it would be steady. Not thrilling, not hollow, but a day that kept its ground with quiet resilience. The recent choices—shorter, focused work bursts; a deliberate mid-day walk; nourishing meals without ceremony—held weight in small, tangible ways: energy that didn’t spike and crash, a mood near even, stress kept within a manageable range. No dramatic breakthroughs, but a broader arc toward anchoring into a steady pace, even as weather shifts or the week wears thin.\n\nAs I closed the door and switched off the hallway light, quiet settled in like a shawl. The day’s rhythm breathed in, and I felt gratitude for ordinary things that keep me afloat: a bed with the right invite, a breakfast that satisfied without perfection, a meal that nourished. Tomorrow will bring its own weather—more small decisions, another chance to notice what keeps me moving without exhausting what needs space to breathe. And for tonight, that feels enough.",
+  "type": "text",
+  "dateOffset": -57,
+  "expectedAnalysis": {
+    "mood": {
+      "moodScale": 6,
+      "sentiment": "neutral",
+      "emotions": [
+        "neutral",
+        "calm"
+      ]
+    },
+    "energy": {
+      "energyLevel": 5,
+      "fatigueIndicators": [
+        "moderate fatigue"
+      ],
+      "sleepQuality": 6
+    },
+    "nutrition": {
+      "foodMentions": [
+        "mixed meals",
+        "some vegetables"
+      ]
+    },
+    "triggers": {
+      "stressors": [
+        "minor stress",
+        "daily challenges"
+      ],
+      "riskFactors": []
+    }
+  }
+}

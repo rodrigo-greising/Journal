@@ -1,0 +1,41 @@
+{
+  "content": "I woke to the ticking radiator and the room still half-lit, the morning light a pale wash on the blinds. Sleep had felt like a string of incomplete sentences: a dream about mislaid keys, a stiff neck, a bed that kept creaking just as I tried to settle. When I finally swung my legs over the edge, my mood sat around a four on the day’s quiet scale and my energy hovered at a three. I moved slowly, rubbing the ache from my shoulder blade and letting the room take a slow breath with me.\n\nThe first cup of coffee helped a little, the grind loud enough to wake the kitchen’s corners. The aroma cut through the morning fuzz, though the cup came with a sting of bitterness that matched how I felt inside—half awake, half spent. I spread mashed avocado on sourdough, sprinkled a little salt, and added a banana, though I could have sworn oats would have soothed a tighter stomach. Nutrition was a mixed bag today: some healthy choices, yes, but the balance still felt off. I wasn’t sure I deserved a bigger victory, and I didn’t pretend I did. Four out of ten for nourishment, maybe a notch lower in the moment, as if the body wanted to remind me to slow down and listen.\n\nWork pressed in as soon as the screen woke up. The inbox was a line of small alarms, each message begging for attention and promising consequences if ignored. A meeting invite pinged, then another thread of replies, and a looming deadline that wouldn’t wait. My shoulders tightened, my jaw clenched, and a tiny tremor ran through my hands as I settled them on the desk. I tried to pace the day, but the pace kept sliding toward a slog. There were moments of clarity, too—a plan to tackle a chunk of a report, a sentence that landed cleanly, a small sense that if I held on a little longer the day might loosen its grip. Still, the stress hovered around a seven out of ten, a draft in the air that I could feel on the back of my neck.\n\nBetween tasks I slipped out for a ten-minute walk around the block, letting the cool air kiss my cheeks and the light brush across my eyes. A neighbor’s dog shot past with its tongue hanging out, and for a second the day’s weight loosened its grip. The walk didn’t erase the fatigue, but it did something to the edges of my attention. It reminded me that I still had a body in this room, not just a mind racing to meet demand. Lunch was simple—a bowl of lentil soup with carrot and celery, a small salad on the side, a crust of bread that looked lonely beside the bowl. It was fine, enough to keep the engine running, not a feast or a failure—just enough to keep the day from stalling. Nutrition remained a mixed score, but the small quiet bite of a meal helped me press forward.\n\nThe afternoon brought another round of calls and edits. A misread message escalated a plan, and for a moment I felt the familiar surge of frustration rise behind my teeth. I paused, exhaled, and reminded myself I could address the issue later and breathe now. There were mercies too—a shared joke with a coworker, a quick nod across a monitor that reminded me I wasn’t in this alone, even if it felt isolating at times. I stood up for a stretch and found the outdoor air again lingered on my skin as the sun began its slow descent. The light took on a softer edge, and the day’s weight drifted a fraction toward manageable.\n\nDinner came together slowly: roasted vegetables tossed with a little olive oil and garlic, a modest portion of quinoa, a small chicken breast that felt sturdy in the belly. The kitchen filled with steam and the scent of rosemary, a simple ritual that tethered me to something practical and real. I ate slowly, savoring the texture of peppers and the grain of quinoa, and I breathed with the rhythm of the meal instead of fighting the clock. A cup of tea followed, pale and comforting, the late light spilling across the counter and painting the room in a forgiving color.\n\nEvening settled in with its own mix of calm and pressure. I texted a friend to check in—not to seek solutions but to be seen, and their warm, practical responses stitched a small seam of relief in the hours. The talk reminded me I wasn’t invisible to the people who mattered, even on days when the room felt crowded with tasks. My mood hovered near four, a steady but unremarkable center; energy remained low, the body heavy enough that ordinary tasks felt like a choice between exertion and rest. The stress didn’t vanish; it settled into the room as a weight I could feel but not fully bear down on.\n\nBack home, I tidied a few corners, washed a mug, turned down the lamp, and adjusted the pillows. The bed called softly, and I crawled beneath the sheets with a mind that was calmer than it had been in hours but not empty. Sleep arrived in fits, the kind that doesn’t crash you but slides you toward rest with a slow sigh. Disruption lingered—a thought about tomorrow’s tasks nudging me awake every now and then—but I didn’t chase it. I remembered the decision I’d tried to make recently: to let evenings be quieter, to give space to the end of the day rather than racing through it. It hadn’t produced fireworks today, and I wouldn’t pretend it did, but I suspected the gentler rhythm would bear fruit slowly, like a plant that grows in its own time.\n\nThe night felt like a continuation rather than a conclusion—a longer breath that took in the day and exhaled the tension. The sleep rating stayed around four, fair enough to held together, but not enough to refresh fully. I noted my energy still near the bottom of the gauge and my mood hovering in neutral, not bright or heavy, just present. The stress hung with the room, a constant companion that hadn’t vanished but didn’t demand everything either.\n\nAs I drifted toward sleep, I thought about the broader arc I was tentatively feeling out—a six-month stretch with its inevitable ups and downs, a path that would not be eroded by a bad day but could be shaped by the small choices I kept returning to: quieter evenings, longer, slower breaths in moments of tightness, and a small, steady table of nourishing meals that kept me upright when the hours grew long. Tomorrow would come with its own mix of demands and small comforts, and I would meet it with the same ordinary honesty I’d shown today: not heroic, not defeated, just here, doing what I could with what I had. The room settled deeper, and I surrendered to sleep, listening to the faint, steady breath of the radiator and the quiet city outside that kept its own, patient tempo.",
+  "type": "text",
+  "dateOffset": -149,
+  "expectedAnalysis": {
+    "mood": {
+      "moodScale": 4,
+      "sentiment": "neutral",
+      "emotions": [
+        "neutral",
+        "calm"
+      ]
+    },
+    "energy": {
+      "energyLevel": 3,
+      "fatigueIndicators": [
+        "exhausted",
+        "low energy",
+        "tired"
+      ],
+      "sleepQuality": 4
+    },
+    "nutrition": {
+      "foodMentions": [
+        "mixed meals",
+        "some vegetables"
+      ]
+    },
+    "triggers": {
+      "stressors": [
+        "work pressure",
+        "deadlines",
+        "anxiety"
+      ],
+      "riskFactors": [
+        "high stress",
+        "overwhelm"
+      ]
+    }
+  }
+}

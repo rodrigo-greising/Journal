@@ -1,0 +1,35 @@
+{
+  "content": "I woke to pale grey light seeping through the blinds and rain hissing at the window. The bed felt cool, the pillow faintly damp where I’d turned before sleep loosened its grip. I’d slept fairly well, with a few interruptions that didn’t sharpen into worry but left my neck stiff and my thoughts in loose threads. When the alarm sang, I rolled onto my back and stared at the ceiling, hoping it would offer a quiet answer to the day. My mood sat in the middle: even, not bright or dim, simply letting the hours arrive without insisting on meaning.\n\nMorning routine felt deliberately ordinary, as if I’d pressed pause on drama and pressed play on a routine I could trust. The kettle sighed as the water heated; the first sip was warm and bitter, clearing sleep from my chest. I ate yogurt with granola and blueberries, a drizzle of honey turning the bowl into a small celebration. A slice of whole-grain toast with avocado and pepper flakes caught a glint of light. Not a grand breakfast, but steady—a pact between appetite and intake that kept energy even.\n\nI’d kept to my small change—one cup of coffee in the morning, then tea and water the rest of the day. It hadn’t cured sleep’s restlessness, but it softened the jagged edge caffeine leaves in the afternoon. Today that milder aftertaste showed in how I spoke to colleagues and in my snack choices. Lunch was lentil soup with spinach and a side salad—greens bright with vinaigrette, ruby tomatoes, cucumber cool on the tongue. I ate with intention but left the second helping untouched; the bowl stood half-empty, signaling the afternoon could unfold without sharp hunger.\n\nWork was work: I logged in, skimmed the to-do list, and noticed a handful of emails with a sense of urgency that wasn’t existential—more like margins ready to widen if I didn’t hold my line. I revised a report, checked numbers, and rephrased a paragraph that had sounded harsher than intended. The tension was a soft undercurrent—two colleagues nudging toward the same goal from different angles, a small disagreement about timing that needed a clarifying email and patience. The day’s weight settled on my shoulders now and then, a reminder I wasn’t free from pressure, just capable of carrying it without tilting.\n\nMid-afternoon brought a breath of air and a ten-minute walk that reset my head more than my legs. The cooler breeze touched my cheeks, rain turning to drizzle, pavement slick in places. The late light caught a thin mist of water and the world moved at a gentler pace than the keyboard. A corner café tempted with the scent of warm bread and roasted coffee, but I pressed on, storing the memory as a mental note rather than a purchase.\n\nA call with a friend later reminded me of how a single conversation threads yesterday to today. We chatted about a neighbor’s plant, a stubborn leak, a novela we’d traded recs for weeks ago. Weekend plans drifted, then settled on ordinary tasks—balancing chores with downtime, letting a quiet evening be enough without noise. Its warmth came from being heard and knowing someone else was navigating the same small, reasonable concerns.\n\nEvening leaned toward something satisfying but not extravagant. I roasted carrots, broccoli, and Brussels sprouts until edges curled; I pan-seared a fillet of salmon, lemon brightening the flesh. Quinoa joined the plate, its tiny grains soft against the lemony olive oil that dressed the vegetables and fish. It was nourishing and palate-pleasing, a dinner that left me pleasantly full without heaviness. Afterward I washed dishes with a quiet cadence and sat with a cup of water, the room lit by a lamp and the hum of the apartment heater.\n\nMovement after dinner came as a gentle walk with my partner. We walked slowly, discussing what went well and what needed more attention, keeping the tone practical. Our talk drifted to a shared future project—a tidy corner we’d neglected—and the plan felt light, a single thread tying today to tomorrow without pulling too hard.\n\nBack inside, the apartment settled into quiet. I cracked a window to let damp air circulate, pulled a cardigan around my shoulders, and read a while. A steady novel with well-drawn characters grounded me in the ordinary ritual of turning a page. Small routines—tea, a walk, a tidy kitchen, a brief call—offered grounding to keep fear or worry at bay, if only for a moment.\n\nAs I prepared for bed, I noted the caffeine tweak’s impact: energy less jagged, the afternoon drift less foggy, the mind quieter at night, even if sleep remained imperfect. Dreams tugged at memory’s edges and a few awakenings lingered, yet I woke steadier than I had in a long stretch, a sense that resilience isn’t loud but present, like the hum of a fridge you’ve learned to ignore.\n\nI’d call the day a kind of success—neither triumph nor surrender, but workable and steady. Mood neutral, energy steady, stress manageable, body able to carry through. No grand insights, but small cues mattered: the taste of a well-timed meal, the relief of a measured breath after tension, a friend’s smile on the phone, the warmth of a home that still feels like harbor after months of wandering through the ordinary. If the arc holds, it’s like a coastline—visible and constant, with weather changing and tides moving, but the shore recognizable enough to guide me back home.\n\nThat night, I drifted toward sleep with the room darkened and the window closed, bed soft beneath my shoulders as the day’s rhythms settled in. The clock in my head ticked slowly, a metronome for ordinary life, and I let the breath ease out, slow and even. Tonight I slept with a quiet expectancy for tomorrow, and that felt like enough.",
+  "type": "text",
+  "dateOffset": -29,
+  "expectedAnalysis": {
+    "mood": {
+      "moodScale": 6,
+      "sentiment": "neutral",
+      "emotions": [
+        "neutral",
+        "calm"
+      ]
+    },
+    "energy": {
+      "energyLevel": 6,
+      "fatigueIndicators": [
+        "moderate fatigue"
+      ],
+      "sleepQuality": 6
+    },
+    "nutrition": {
+      "foodMentions": [
+        "mixed meals",
+        "some vegetables"
+      ]
+    },
+    "triggers": {
+      "stressors": [
+        "minor stress",
+        "daily challenges"
+      ],
+      "riskFactors": []
+    }
+  }
+}

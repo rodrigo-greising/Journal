@@ -1,0 +1,35 @@
+{
+  "content": "The night settled into a rain-softened hush and I slept enough to feel the day’s weight lift with each exhale. I woke before the alarm, a trace of shoulder ache from sleeping on my left side, the pillow pressed just so against my ear. Sleep had been restful, not perfect, but long enough to stitch a thread of steadiness. When the clock nudged past six I opened the curtains and let a pale gray glow fill the room; rain turned the street into a filmed backdrop. The six-month project nagged quietly in the back of my mind—progress in small increments, not fireworks—and I let it settle as a quiet tether.\n\nBreakfast came in two acts: oats with salt, a handful of blueberries, chopped almonds, a swirl of yogurt. Not fancy, but solid—protein and fiber, a gentleness that steadied rather than spiked. I brewed coffee as mist curled from the kettle and watched morning light spill across the table. Then I packed a small lunch: leafy salad with chickpeas, cucumber, red pepper, lemon-tahini dressing, plus quinoa to warm later. A soft pastry sat beside it—crumbly, comforting, a childhood memory. Mixed nutrition, I told myself with a soft critic, and moved on.\n\nThe walk to the bus stop became a ritual I hadn’t known I valued until today: damp pavement under my shoes, air clean in a way that invited noticing. Streetlight halos on wet bricks, a dog trotting ahead with a practiced bounce, the late-fall murmur of traffic. A sparrow by a storefront tilted its head as if listening to the same radio I wore—the loop of news and memories-in-disguise. My energy felt steady, not a sprint but reliable traction, enough to carry me through the first hours.\n\nWork began with the usual rhythm: scan emails, jot a plan between calendar margins. I tackled urgent tasks first, anchoring to definite outcomes. A system glitch wouldn’t open a document. I breathed to five, saved, reopened, tried again, then fetched a different file. Not dramatic, just friction nudging me to slow down and choose a careful path over a clever shortcut. The edge of stress hovered at a five out of ten—manageable, like a low drumbeat I could tune out while thinking.\n\nLunch arrived with citrus from the dressing, bright and refreshing. I ate with a fork; chickpeas added soft texture, quinoa warmed my stomach with quiet stamina. Water stood nearby as a small self-care parcel. The pastry offered reassurance, a reminder that balance—neither strict virtue nor indulgence—felt right in the moment.\n\nIn the afternoon I found a rhythm that didn’t demand too much at once. A colleague asked for help on a problem not mine to fix; I offered concrete steps and a listening ear, which eased their tension and settled something in me. I stood by the window for a breath, letting my arms swing as I stretched. I walked a ten-minute loop around the block to wake the legs and loosen stiffness around the neck after long screens. The air was cool but not stingy, a nudge toward alertness that didn’t feel forced. My energy stayed steady, not surging or sinking—a 6/10.\n\nBy late afternoon the day settled into a comfortable cadence. I finished tasks, reviewed a draft with a careful eye, and sent it with a small ceremonial note of completion. The morning glitch dissolved into the soft space between tasks—a reminder that days carry small challenges, and that’s enough to keep balance honest. I didn’t wallow; I acknowledged it and moved on, letting my posture lengthen as I looked at the room, the glass catching the last light like a shard of gold.\n\nEvening slowed further. After gathering my things I walked home, choosing air and a longer inhale over the ride. The apartment smelled of garlic and roasting vegetables as I slid a tray into the oven—carrots, broccoli, and chicken with olive oil, salt, pepper, and cumin for warmth. The kettle steamed while I waited. The clock ticked, wind hummed against the balcony door, the sounds settling into a quiet chorus that kept me present for the meal.\n\nDinner felt enough—protein to honor the day, greens to nourish, starch to steady. A small square of dark chocolate followed, sweetness felt right after the roasted vegetables. I planned a light snack later—an apple with peanut butter—but didn’t need it; the warmth of food and the day’s pace were enough.\n\nI tidied the kitchen, washed a few dishes, and curled up with a book that didn’t demand much. The mind wandered, as it does on days held by quiet confidence, and I watched it drift without chasing it away. A quick text with a friend—plans to catch up on the weekend—reminded me that connection stitches days together, a thread through the broader arc I’m living into, even when moments feel solitary.\n\nNight cooled the air and rain paused; I stood by the window, hands in my pockets, letting the room settle into the hush. My mood stayed neutral, not flat, not bright, just present. Energy held enough to walk to the couch, brush my teeth, and slide under the sheets with a soft sigh. Sleep didn’t rush, but came with a reassuring fullness, a sense I’d given the day what it needed and could wake tomorrow with the same calm center.\n\nAs I drifted toward sleep, I thought about the small changes—the quiet pauses before answering, the deliberate walk after lunch, the boundary of evening with the phone left in another room. They weren’t dramatic, but they mattered: they kept the day from tipping in any direction. Tomorrow would bring its own demands, its own chances to choose calm over haste, nourishment over neglect, connection over isolation. Tonight, I rested with the thread of this six-month journey intact, woven through a day that offered just enough energy, just enough breath, and a mood exactly where it needed to be.",
+  "type": "text",
+  "dateOffset": -56,
+  "expectedAnalysis": {
+    "mood": {
+      "moodScale": 6,
+      "sentiment": "neutral",
+      "emotions": [
+        "neutral",
+        "calm"
+      ]
+    },
+    "energy": {
+      "energyLevel": 5,
+      "fatigueIndicators": [
+        "moderate fatigue"
+      ],
+      "sleepQuality": 7
+    },
+    "nutrition": {
+      "foodMentions": [
+        "mixed meals",
+        "some vegetables"
+      ]
+    },
+    "triggers": {
+      "stressors": [
+        "minor stress",
+        "daily challenges"
+      ],
+      "riskFactors": []
+    }
+  }
+}

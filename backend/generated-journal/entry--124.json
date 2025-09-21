@@ -1,0 +1,47 @@
+{
+  "content": "The night bled into morning with a stubborn dull ache in my chest, and I woke before the alarm, already rooted in a gray mood that would hold on for hours. The bed felt soft and light at once; sheets clung, then released. The radiator rattled like a lean clockwork thing, reminding me I was still inside this day. My mouth was dry, throat tight enough to force two deliberate swallows before a sentence would feel possible. Limbs heavy from waking, as if sleep had taxed them into fatigue. The shades hummed, and a bird outside kept up a bright chatter, as if to remind the morning there was more than this fog.\n\nI moved slowly, like navigating a crowded street where every conversation feels loud and shallow. The apartment smelled faintly of last night’s coffee and yesterday’s leftovers, a reminder I hadn’t tidied. I reached for the kettle with reluctance, brewed the strongest coffee I could stand, added sugar and creamer, hoping for a spark from ritual. I promised to eat soon, but the cupboard held only processed options and the fridge lukewarm leftovers. I settled for a plain granola bar, dry and sweet, and a glass of water I almost forgot to drink as my attention drifted to what I hadn’t yet started.\n\nMorning at work flooded the inbox with urgent notes and loud keystrokes that ignored the quiet I wanted. I stalled over small decisions—respond now or wait, rewrite a dull line, acknowledge a problem or pretend it would vanish. The first meeting sounded both distant and close, as if in another room and mood. Words came out clipped: yes, no, got it, working on it. A question required thought, and the fog in my brain delayed ideas, like a light stubborn to switch on.\n\nI moved through the morning with deliberate slowness, tasks feeling political: a opened file I half-forgot to close; a note I reread and changed for reasons that felt exposed to insecurity. My brain circled the same territory—what I owed, what I could do, what would be asked if I asked to breathe. A small discomfort—stale coffee, a squeaky chair—tilted me toward irritability and then quiet resignation. I longed for simple comforts: something warm to hold, a crunchy snack, a listening, easy voice. Instead I had a hollow chuckle in my head and a deadline ping I felt unready to meet.\n\nLunch reminded me of easy choices that satisfy now but sting later. I heated a microwaved beige thing, a project I’d prepared for but hadn’t finished. It wasn’t terrible, just processed and quick. I chased it with chips and a too-fizzy soda, salt prickling my tongue and throat. I stared at the wall, hoping paint could offer answers I hadn’t found. Hydration stayed a vague intention, not practice, and by midafternoon the sugar crash followed the caffeine tremor like an unwelcome guest.\n\nA few days earlier I’d decided to keep meals simple, not chase a perfect nutrition plan when energy was this low. The hope was steadier focus, a tempered mood, a measure of control. Today that impact felt negligible, a whisper drowned by the ache of overwhelmed thoughts. Still, I clung to it as I stepped outside for a five-minute walk, hands in pockets, collar up against the chill. The air tasted metallic and fresh, almost medicinal, and I swallowed life into my lungs. The street noises offered brief relief, then I returned to a desk where the screen glowed harshly and the clock pressed on cruelly.\n\nThe afternoon wore on like a damp wool sweater—soft enough to cling, heavy enough to slow every motion. More emails, more meetings, simple conversations that drained me anyway. One message hovered on good news and bad, and the fear of a problem I couldn’t fix curled in my stomach. My posture betrayed me: shoulders hunched, neck stiff, jaw set. I stood irregularly, reminding myself I could move—each tiny step a victory with a high price. The heat left my skin slick and the room warm, thinning patience.\n\nWalking home, the city felt both close and distant, a place I could visit but not inhabit. The five-minute stroll turned to labor; fatigue pressed in my calves as if I’d run farther than I knew. The evening routine became a patchwork: hot water, salt-tasting soup, toasted bread warming into a small island in a sea of darkness. I allowed a second cup of coffee with the last creamer, a stubborn hope for clarity that never fully arrived. The apartment grew quiet, not because things stopped rattling, but because the mind settled enough to listen to the stillness and hear how loud it could sound when there’s nothing left to do but wait.\n\nNight settled with soft insistence, and sleep was merciless. I lay with restless energy, body jittery, mind chasing worries—deadline, missed call, a partner’s voice I hoped for but didn’t hear. My body wore the day’s stress like a bruise; throat tight with unsaid words. I counted breaths, hoping for a map out of the fog, but each exhale carried a sigh of defeat. The night held fragments—work snippets, imagined future meetings where I’d summon missing confidence, and a recurring image of walking into a room with both hands full but nothing to give that mattered.\n\nSleep arrived shallowly, and I woke wondering what time it was and whether the day could make sense again. It didn’t. The clock blinked through hours as if I’d slept soundly elsewhere. My sleep rating stayed a three out of ten, and the next morning I woke still carrying the day’s weight as if I’d never laid it down. Yet there was honesty in the day’s rhythm: small mercies asked for, little returned, nerves kept taut, routines made into stairs too tall to climb. It’s part of a six-month journey with rough weather and quiet rituals, and I tell myself tomorrow will come with its own weather and a chance to begin again—even if it begins with the same ordinary, imperfect steps.",
+  "type": "text",
+  "dateOffset": -124,
+  "expectedAnalysis": {
+    "mood": {
+      "moodScale": 1,
+      "sentiment": "negative",
+      "emotions": [
+        "sad",
+        "frustrated",
+        "anxious"
+      ]
+    },
+    "energy": {
+      "energyLevel": 1,
+      "fatigueIndicators": [
+        "exhausted",
+        "drained",
+        "lethargic"
+      ],
+      "sleepQuality": 3
+    },
+    "nutrition": {
+      "foodMentions": [
+        "processed foods",
+        "fast food",
+        "junk food",
+        "convenience meals"
+      ],
+      "calorieEstimate": 2097
+    },
+    "triggers": {
+      "stressors": [
+        "major deadlines",
+        "work pressure",
+        "anxiety"
+      ],
+      "riskFactors": [
+        "high stress",
+        "depression risk",
+        "burnout risk",
+        "anxiety"
+      ]
+    }
+  }
+}

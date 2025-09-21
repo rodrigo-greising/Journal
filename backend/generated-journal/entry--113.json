@@ -1,0 +1,47 @@
+{
+  "content": "Morning started with a dull throb at the base of my skull and a lamp too bright for the half-trained calm I could manage. Anxiety hummed in the room, a tremor in the chest that wouldn’t settle no matter how I rearranged the blankets. Light pressed through the blinds in a gray hush, and the room’s stillness made every small sound louder—the fridge sighing, the radiator coughing, a distant siren that always seems urgent only when it isn’t. I lay listening to my breathing, counting to ten and starting over, hoping the cadence would slow the clock inside me. It did not.\n\nSleep had not been restorative; I woke several times, chasing unfixed thoughts—money, a deadline, a message I hadn’t answered. When I finally rose, the day stretched ahead like a colorless tunnel. The body remembered rest in a way, but lacked the muscle memory to enact it. Shoulders rose toward the ears as I stretched, and I winced a little, a tiny signpost to slow down.\n\nCoffee did the slightest of favors. I brewed a strong mug, steam curling up, and swallowed a long burn that woke nerves I hadn’t known were slack. I added a little sugar and milk, not too much, though the sweetness couldn’t fix the ache. Breakfast was a slice of white toast with margarine and what looked like store-brand jam. I ate while scrolling emails, a habit I fall into when energy deserts me. The first message—a colleague asking for a simplified summary of a project I’d spent days on—sat empty in my inbox for a long beat before I typed, erased, then retyped, testing whether anyone could hear me through the fog.\n\nWork arrived with a stubborn fatigue that clung to my bones. The chair creaked with every movement, loud enough to feel accusatory in the quiet apartment, where the fan hummed in the corner. Concentration wouldn’t come; I felt like a battery nearly drained—every task a sprint through molasses. A file to upload, a link to share, a note tucked somewhere I couldn’t locate—it all slid like wet sand under my feet.\n\nMidday brought a bland microwaved lunch and a chalky, unsatisfying wedge of brain fog, followed by a fizzy drink that tasted medicinal and did nothing for clarity. The sugar spike thudded into my temples, sharpening the ache rather than dulling it. I stood up a few times to stretch, walked the corridor and back, but the momentum never showed up for me.\n\nBetween meetings I did one small thing: I stepped outside for five minutes of air. The late-winter bite was sharp, the street smelled like rain before the rain, and the world carried a quiet heaviness that never quite lifts. I walked slowly, counting steps, listening to the bus, a storefront sign clinking, a dog pulling its owner along. It felt almost restorative, proof that the body could respond to movement even when the mood stayed stubbornly low.\n\nBack inside, a message from a friend arrived—brief, careful, offering a listening ear. I wrote something honest instead of a gloss, and the exchange drifted in and out through the afternoon, a small thread of connection that reminded me someone else was alive in the world.\n\nEvening offered little relief. I reheated another processed meal, noodles in a sauce that clung without pleasure, and ate with the care of someone navigating a dozen open tabs. Water, always water, but tonight it slid through me without quenching. I brewed a second pot of coffee, a misstep I know I’ll regret when sleep comes, and reminded myself I’d promised to cut late-afternoon caffeine for sleep’s sake. The day’s gravity felt heavier than the decision.\n\nTalking with a colleague about a problem I partly caused brought the tension back to my chest, the jaw clenching as I searched for a plan that was only fragments. My voice tremored on the line, not at war with the other person, but with the limits of what I could offer in that moment. It wasn’t a quarrel so much as a stubborn negotiation between what I should do and what I could.\n\nEvening drifted at a soft, unremarkable pace. A few stretches—neck rolls, shoulder squeezes, a lazy twist—mattered little. The apartment cooled as the heater settled into a rhythm that felt more literal than comforting. I stood by the kitchen window and watched a wind-blown tree, listening to the streetlights hum, the world huge and indifferent next to the minute weather of my mood.\n\nBy the time I crawled into bed, sleep was a necessity rather than a boon. Restless but not fully awake, I counted mantras, tried to breathe in time with the clock’s steady tick, and drifted just enough to wake at dawn with that same gray light in my skull. The next morning would begin with the same awareness: today would ask more than I felt capable of giving. The body lagged behind the mind, stress did not respect my plans, and progress would come in fragments, not breakthroughs.\n\nI’d weather this day as I’d weather most days in this six-month stretch—one breath, one step, one small choice at a time. I’d drink water, eat something nourishing, move in the quiet way my body could manage, and reach out to someone who might hold the line for a little while. Now that I’ve written it, the day doesn’t feel quite so all-consuming. The mood remains low, the energy stubborn, the sleep fragmentary, the stress high, but there is a thread of continuity in naming it instead of letting it swirl. If nothing else, there is a plan: reclaim a portion of tomorrow, even if only a few minutes at a time, to treat myself with the same careful, imperfect kindness I’d offer a friend on a day like this. The day has left its mark, but it hasn’t erased the field I’m slowly tending, the work I’m still doing, the people who float in and out like small, moving lights in the dusk. And for now, that’s enough to hold onto.",
+  "type": "text",
+  "dateOffset": -113,
+  "expectedAnalysis": {
+    "mood": {
+      "moodScale": 1,
+      "sentiment": "negative",
+      "emotions": [
+        "sad",
+        "frustrated",
+        "anxious"
+      ]
+    },
+    "energy": {
+      "energyLevel": 2,
+      "fatigueIndicators": [
+        "exhausted",
+        "drained",
+        "lethargic"
+      ],
+      "sleepQuality": 4
+    },
+    "nutrition": {
+      "foodMentions": [
+        "mixed meals",
+        "some vegetables",
+        "occasional fast food",
+        "basic cooking"
+      ],
+      "calorieEstimate": 1823
+    },
+    "triggers": {
+      "stressors": [
+        "major deadlines",
+        "work pressure",
+        "anxiety"
+      ],
+      "riskFactors": [
+        "high stress",
+        "depression risk",
+        "burnout risk",
+        "anxiety"
+      ]
+    }
+  }
+}

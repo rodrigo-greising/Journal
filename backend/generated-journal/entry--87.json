@@ -1,0 +1,39 @@
+{
+  "content": "Morning arrived with pale blue light seeping through the blinds and the apartment settling into its usual rhythm—the fridge’s distant hum, a muffled rattle somewhere, the radiator sighing as it woke the day. I woke with the familiar ache of a night that hadn’t fully forgiven late hours. Sleep felt fair, not kind, and I kept a rough tally: about four out of ten. Dreams were fragmented, sharp images stitched by a logic that evaporates upon waking. I told myself to begin again, even as the body resisted. My mood hovered around four, energy around four, stress around seven, if I trusted the little internal ledger I’d kept lately. It wasn’t glamorous, but it felt accurate, and sometimes accuracy was enough to keep moving.\n\nMorning pulled me from the blankets with the kettle’s hiss, floorboards groaning, and the clock ticking. I padded to the kitchen and let coffee’s aroma anchor the day. I stirred oats into milk, folded in yogurt, blueberries, and a whisper of cinnamon. The bowl rested on the table like a pale horizon. I ate slowly, letting nourishment land where it could. The oats’ bite, yogurt’s tang, berries’ coolness offered a steadying rhythm I could feel in my jaw and in my shoulders loosening a fraction with each swallow. I shaved a minute off the breakfast rush by sipping coffee and planning the day in my head. Choosing a modest, nourishing breakfast felt like a quiet pledge—nothing heroic, just a line drawn in the sand that morning would not erase.\n\nI dressed with care but without ceremony: soft shirt, jeans that carried me through the day, sneakers with forgiving grip, hair brushed back in a practiced rhythm. I checked water bottle, notebook, pen, and a folder I needed to review before the afternoon. On the walk to the bus stop I drew measured breaths, keeping shoulders from creeping toward my ears. The city did its ordinary things—the faint hiss of a bus, leaves rustling, a neighbor’s distant laughter—a steadying chorus if I tuned into it.\n\nWork opened with a full inbox and a calendar that looked cheerfully impossible. The first message touched a deadline I’d inched toward for weeks: lines about what could slip, what couldn’t, and words heavier than their letters suggested. No drama, just the steady pull of responsibility that makes you set your jaw and begin despite a weather system in your head. I paused to breathe, then opened the shaping spreadsheet, checked numbers, and revised a line of a draft email with a calm hand. The work didn’t spark a fire, but it moved forward—slow and inexorable, like a ship edging through a shoulder-high tide.\n\nLunch brought a small relief. I packed a salad with greens, grilled chicken, cherry tomatoes, cucumber, feta, and lemony vinaigrette. I ate slowly, flavors mild but brightening the monotony. I stepped outside for ten minutes, letting the air work on my lungs. The street read like a ledger of ordinary life: buses wheezing, a dog tugging a leash, a neighbor chatting about a plant. The sun dived behind clouds and then returned as I walked at a pace that kept my heart steady yet reminded me I could move. It was a small act of care that didn’t erase stress but lightened it a shade.\n\nAfternoon stretched in increments. A colleague wandered by with a joke about a temperamental coffee machine, and we laughed, loosening shoulder tension. I sorted desk drawers, stacking papers into neat towers—childlike satisfaction in order. The day’s stress didn’t vanish; it settled as a heavier chest, a reminder that some days carry more weight. I reminded myself this was part of the six-month arc: not a day off from stress, but a day with less drama in how I responded. I’d been testing small changes—earlier bedtimes, lighter evening meals, shorter screens before bed—and watched their imprint on today, lightly, without forcing the outcome.\n\nEvening brought its familiar gravity. I walked home, not for fitness but because the steady momentum felt right after a day that remained tense. Dinner was simple: baked salmon with a lemon glow, roasted broccoli with a gentle char, and quinoa. I drank water and allowed a small bite of dark chocolate after the plate was cleared, not as a reward but as a counterpoint to the day’s bitterness. The meal didn’t offer dramatic relief, but it softened the last hours and coaxed a slower, steadier breath.\n\nAfter dinner the apartment settled into evening—the kettle’s final whisper, clinking dishes, and the soft rustle of a page turning. I kept screens at bay and let my mind wander. I read briefly, letting sentences drift rather than demand solutions, then set the book aside and prepared for bed with quiet acceptance. The night would hold its own challenges—restless sleep and wakeful stretches—but I reminded myself it was part of the pattern, not a failure.\n\nI crawled beneath the sheets with a mind still busy but softening its grip. Sleep wouldn’t be perfect; disruption was a familiar companion. In the night I woke briefly, then drifted back to a light, unsettled sleep. The night felt contemporary in its ordinary intensity, a reminder that the six-month journey would be carved in days like this—tension pressing in, yet movement persisting, nourishment mattered even when appetite wavered, and small acts of rest and care remained steady even when stress stayed high. I went to bed hoping tomorrow might offer a touch more balance—not a miracle, but a lighter sense of grounded ease. If nothing else, the day kept moving forward, a thread in the broader fabric I was slowly learning to weave.",
+  "type": "text",
+  "dateOffset": -87,
+  "expectedAnalysis": {
+    "mood": {
+      "moodScale": 4,
+      "sentiment": "neutral",
+      "emotions": [
+        "neutral",
+        "calm"
+      ]
+    },
+    "energy": {
+      "energyLevel": 4,
+      "fatigueIndicators": [
+        "moderate fatigue"
+      ],
+      "sleepQuality": 4
+    },
+    "nutrition": {
+      "foodMentions": [
+        "mixed meals",
+        "some vegetables"
+      ]
+    },
+    "triggers": {
+      "stressors": [
+        "work pressure",
+        "deadlines",
+        "anxiety"
+      ],
+      "riskFactors": [
+        "high stress",
+        "overwhelm"
+      ]
+    }
+  }
+}

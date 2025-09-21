@@ -1,0 +1,47 @@
+{
+  "content": "The night refused to settle. I woke twice before the alarm, the second time to a window that wouldn’t quite let morning in and a fan that sounded like a distant train. Damp cold seeped into the bed and into my bones; I rolled onto my side, counted breaths, and waited for sleep to loosen its grip. When real morning arrived, the light was pale, the bed both soft and heavy, as if it had swallowed my restlessness and tucked it away like a kept promise I wasn’t sure I could keep.\n\nI shuffled to the kitchen on legs that felt weighted with sleep. The kettle hissed and jolted me upright against the walls of the small apartment. I brewed coffee I knew wouldn’t fix anything; the mug warmed my hands while burnt beans and yesterday’s sourness clung to my tongue. I didn’t have energy for anything nourishing, so I settled for two pre-packaged muffins—sweet, fast, and mercifully unasking of care.\n\nThe day loomed with tasks that felt beyond reach. I opened the laptop and watched the cursor blink, a little taunt. A chart suggested progress I couldn’t feel; if I focused hard enough, maybe the fog would lift. It thickened with every click, every failed sentence, the words stubbornly crooked as if stapled to the wrong line. The easy rhythm of work remained out of reach, and I stared at the same paragraph for minutes, as if the words were shy and wouldn’t meet my eyes.\n\nMorning bled into afternoon with small relief, and I wandered out for a short walk, wind fierce on my cheeks. The sky was pale gray, promising nothing. I moved slowly, preserving ritual rather than chasing a mood. A neighbor’s dog tugged toward a lamppost, then back; the dog’s wagging tail, a striped-sweatered reader by a window, my own avoidance of passing faces—ordinary life flickered briefly, then withdrew.\n\nLunch was pragmatic: a microwaved burrito from a vending machine, burnt cheese and a metallic aftertaste. I drank water, partly out of memory, partly out of stubbornness—keep the body moving, even if the heart sprints away. I pressed on, but the screen blurred, and the to-do list collapsed into one claim: I was not enough for this moment.\n\nA colleague asked for an update on a project that had felt doable last week. My chest tightened; breath grew shallow and quick, the way fear squeezes a room. I typed a careful reply, then erased it and started again, hands trembling as the keyboard clacked louder to compensate. Heat rose in my neck—embarrassment, anger, or the ache of too much thinking with too little fuel.\n\nAfternoon carried a dull shoulder ache, a weight that seems to grow when movement is scarce. I rubbed the knots, stood, walked, told my legs they could still carry me, even if every step dragged. The clock became a metronome for fatigue, its minutes lengthening into an almost unbearable stretch.\n\nThe sun slid lower, turning the kitchen tiles to a warmer gold. I forced dinner into existence—not a feast but a necessity: sauce on store-brand pasta, grated cheese that clumped in the center and powdered at the edges. It was nourishment enough to keep going, nothing more. The fridge hummed; traffic rasped outside; my stomach tolerated the food, waiting for whatever came next.\n\nEvening arrived with a dry, long list of tasks no one could finish. I washed dishes, not in ceremony but to quiet the kitchen’s creaks. I checked the plants by the window; soil dust on my fingertips and leaves that wanted to yield. A planned call to a friend never happened; I drafted a text and deleted it, choosing silence over words that wouldn’t fit. The dog-watcher below barked once, and I felt a sting of longing for ordinary cheer, something I could borrow for a while.\n\nBy night’s end the room lay quiet, which should have been comforting but wasn’t. The pillow pressed to my cheek felt foreign. My brain had moved from thought to worry to a numb recounting of the day’s small failures. I lay and listened to the house: the clock in the hall, a distant bus, the radiator—each a note in a song I couldn’t fully hear. I replayed avoided conversations, unfinished tasks, moments where I felt I fell short. It wasn’t dramatic or loud; just a careful, exhausting whisper.\n\nI slept fitfully, waking several times like a tired child after a storm. Dreams were fragmentary—an elevator crowded with strangers, a phone that wouldn’t ring, coffee that tasted lukewarm and unkind. When sleep finally loosened its grip, the pale morning light leaked around the blinds. I thought about the day ahead as if I could sail through it if I found the right pace. The ache lingered—back, jaw, the knee that twinges after too much sitting. I had no plan for tomorrow beyond doing the least harmful version of what needed doing; some days would be like this, days when body and mind sit on a fault line and crosswinds make staying upright feel like work.\n\nAnd so I carried through what I could and let the rest go. I did not pretend I felt better. I did not pretend there had been a breakthrough. It had simply happened, one slow, ordinary moment after another, with the ordinary pains and stubborn glimmers of care that keep showing up even when I doubt I deserve them. The six-month arc felt both farther and closer—distance because mercy remains, proximity because I keep returning to the same rituals of daily survival: coffee, something easy to eat, a little movement or stillness, a room that carries the echo of another person’s ordinary day. I drift toward sleep with this quiet, stubborn truth tucked inside: today was not kind, but I did not vanish. There would be another day, another chance to adjust, to breathe a little deeper, to welcome a tiny steadiness back into the body, even if only for a few breaths at a time.",
+  "type": "text",
+  "dateOffset": -137,
+  "expectedAnalysis": {
+    "mood": {
+      "moodScale": 1,
+      "sentiment": "negative",
+      "emotions": [
+        "sad",
+        "frustrated",
+        "anxious"
+      ]
+    },
+    "energy": {
+      "energyLevel": 1,
+      "fatigueIndicators": [
+        "exhausted",
+        "drained",
+        "lethargic"
+      ],
+      "sleepQuality": 2
+    },
+    "nutrition": {
+      "foodMentions": [
+        "processed foods",
+        "fast food",
+        "junk food",
+        "convenience meals"
+      ],
+      "calorieEstimate": 2046
+    },
+    "triggers": {
+      "stressors": [
+        "major deadlines",
+        "work pressure",
+        "anxiety"
+      ],
+      "riskFactors": [
+        "high stress",
+        "depression risk",
+        "burnout risk",
+        "anxiety"
+      ]
+    }
+  }
+}

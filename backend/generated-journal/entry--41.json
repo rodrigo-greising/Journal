@@ -1,0 +1,35 @@
+{
+  "content": "The morning began with a pale sunrise pressing through the blinds and a steady hum from the radiator in the corner. I lay a while longer, listening to the mug clink downstairs and a distant bus, as if the city woke with me. Sleep was fair, with a few rough patches that felt ordinary in a day like this. I woke briefly at 2:17, the room warm, the clock blinking a stubborn blue. I shifted, found a better position, and the second stretch came in a shallow, unhurried sweep, enough to spare me the alarm. When the alarm finally rang, getting to the kitchen felt heavier than it should, but not by much—a likeable, unremarkable weight. I woke again, a quiet moment of mercy before the day began in earnest.\n\nI brewed coffee and stood at the window for a moment, watching steam rise and vanish into the kitchen air. The scent pulled me awake softly—coffee, paper, a hint of morning rain not yet fallen. I ate oats with blueberries, yogurt, chopped almonds for texture. It wasn’t a great breakfast, but steady: nothing spicy, nothing too sweet, just enough to steady stomach and mind. I reminded myself to drink water and to be present with the small acts instead of letting the day drift in autopilot.\n\nMy energy hovered in the middle, a calm river before a breeze. I moved slowly, letting the kettle finish its whistle, then tucked a scarf around my neck and stepped outside for a quick ten-minute walk. The air was cool in the shade, a touch damp at the edges, and I breathed in through the nose, out through the mouth, counting steps to anchor myself. A neighbor with a dog wagged a tired tail, and we shared a quick nod. The walk reminded me movement, even small, could clear the fog without demanding more than it gave. Back inside, my shoulders loosened a fraction and my thoughts steadied.\n\nWork began with a desk already cluttered with reminders and emails stacked like a tidy tower. I opened a project report and found a section I’d rewritten twice last week, the page’s stubborn silence mirroring my indecision. The first hour felt slow and stubborn; I worried about time for the presentation and whether a promised reply would feel crisp or clumsy. A quick walk to the break room, a sip of water, and a look out the window helped. The gray sidewalk carried just enough texture for my eyes, and I returned with a clearer sense of what needed doing.\n\nMid-morning brought a flurry of messages and small interruptions that nudged the nerves slightly higher. Not dangerous, just enough to expect the next ping. I reminded myself the day’s mood was meant to be neutral, a steady five out of ten, and tried not to dramatize the ripples. A coworker stopped by with a question about a joint deadline, and we traded quick lines that felt respectful and efficient. The exchange nudged me toward a working rhythm that wasn’t aggressive but clear. By lunchtime, the urge to fake sharpness faded; what remained was quiet competence.\n\nLunch was modest: quinoa with roasted vegetables and chickpeas, spinach, lemon, and a small square of dark chocolate. It was honest and sufficient, not chasing a mood but steadiness. The afternoon brought a dip in energy, a drag in the backs of my shoulders, but a five-minute stretch and steady breathing brought momentum for the next hour.\n\nAround mid-afternoon I checked in with a friend; a short text became a longer call. We compared notes about a minor hardship and our stubborn coping tricks: a short walk, water instead of juice, a breath when the heart rate climbs. The chat rested me, reminding me I wasn’t alone in the ordinary struggle. There was a sense of continuity, being in a longer line rather than a single moment. Laughter gave way to quiet, and that quiet felt like a small gift.\n\nIn the late afternoon I revisited the draft for a report. Small shifts mattered: a tighter schedule, a post-lunch walk to puncture inertia, and a rule to step away from the screen for a breath when my eyes felt tired. I wasn’t sure how visible the impact would be, but the tempo of my thoughts slowed. Not speed, just steadiness. The finish felt like completion rather than relief, and the stress remained manageable—a careful hand on a shelf rather than a storm at the door.\n\nDinner was simple—salmon, sautéed greens, and a small baked potato. The salmon carried a mineral brightness, the greens crackling as the olive oil caught the light. I ate slowly, letting the day settle, then watched a show that asked for only a little attention. Afterward I walked the block again, a shawl across my shoulders, the air tasting faintly of rain though it hadn’t fallen. The walk didn’t erase the day, but it softened it enough to make night feel possible.\n\nFatigue crept in, and I felt the day’s sleep disruptions echo in thoughts turning toward tomorrow’s list. I reminded myself to tread lightly with expectations, to let evening be what it could be without verdicts. The night settled with the apartment’s quiet creak and the lamp’s soft glow. I brewed tea instead of wine, the caffeine-free warmth easing the edges of my body, and kept my mood in the middle—neither buoyant nor blue, just present. Sleep didn’t come easily at first; I woke once with a tangle of tired limbs and a flutter of anxiety. A few mindful breaths and a shift of pillow and blanket, and I drifted again, the clock’s tick and the street outside reminding me that life moves on even when I want to pause.\n\nMorning pressed in again, and I kept the cycle in mind: neutral mood, moderate energy, fair sleep with a touch of disruption, balanced nutrition with occasional healthy wins, and manageable stress. It wasn’t glamorous, but it felt honest and doable. I ended the day with a soft sense of continuity rather than a clear triumph, which felt okay. There was a quiet conviction that these small, careful choices were real, that they formed a line I could walk even on days when the path seemed flat and the air thick. I closed my eyes and let the room hold the last minutes of night’s cool air and the street’s soft murmur, sleeping with ordinary gratitude for the steadiness I’d managed to sustain today.",
+  "type": "text",
+  "dateOffset": -41,
+  "expectedAnalysis": {
+    "mood": {
+      "moodScale": 5,
+      "sentiment": "neutral",
+      "emotions": [
+        "neutral",
+        "calm"
+      ]
+    },
+    "energy": {
+      "energyLevel": 5,
+      "fatigueIndicators": [
+        "moderate fatigue"
+      ],
+      "sleepQuality": 6
+    },
+    "nutrition": {
+      "foodMentions": [
+        "mixed meals",
+        "some vegetables"
+      ]
+    },
+    "triggers": {
+      "stressors": [
+        "minor stress",
+        "daily challenges"
+      ],
+      "riskFactors": []
+    }
+  }
+}

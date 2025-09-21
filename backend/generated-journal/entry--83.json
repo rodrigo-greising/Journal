@@ -1,0 +1,35 @@
+{
+  "content": "I woke to pale morning light pooling along the edge of the blinds and a soft hum from the street below. The room felt cool, the sheets a touch stiff until my body loosened into them. I counted breaths, letting quiet fill the day’s edges—as if listening to a lullaby that asked nothing. The sleep had been enough to feel restorative without tipping into dreamland fireworks, a steady 7 out of 10 in the back of my head, as if I’d slept through a calm street of traffic and woken to quiet.\n\nI brewed coffee; its aromatic bite filled the kitchen. Not chasing a jolt, just a steady buzz to carry me through the morning. Breakfast was yogurt with sliced banana, chopped walnuts, and honey, plus whole-grain toast with avocado. Textures honest—creamy yogurt, crisp fruit, crunch from nuts—and the flavors simple. Nutrition, a mixed bag today, a few good choices among easier ones, but I kept it measured, testing a habit rather than enforcing a rule.\n\nMorning moved slowly. The kettle hissed, steam fogging the window as I made tea for the afternoon and another mug for whoever might stop by later. I walked to the bus stop, letting steps settle into a quiet metronome. Familiar walks reset the brain without fanfare, the body saying, We’re here; we can handle this. The air had late-summer crispness, a little damp at the edges, smelling faintly of rain that hadn’t come yet. I felt the weight of a light pack on my shoulder—reminder of options, not burdens. Energy stayed even: not draining, not racing ahead.\n\nAt work, a steady sequence of tasks: brief emails, a few edits, a quick review of a project timeline, a planning note for a meeting later in the week. I hovered around a neutral middle, a reliable 6 out of 10. Small interruptions—phone calls, a coworker’s question, a momentary server blinked—and I answered with the same even cadence: breath, nod, straightforward reply. Stress lay as a modest weight in the sternum, manageable, the kind of tension you notice only if you pause to listen.\n\nLunch was leftovers from last night’s stew, with steamed greens and an orange. The stew carried depth—caraway, cumin, a slow-simmered tomato base holding the vegetables I’d bought with good intentions and forgotten to use. Eating was steady, not ceremonial, a quiet act of care. I chose water over soda—a small line drawn without fanfare. Digestion settled with a soft sigh, the body doing its normal business while I listened to what it needed.\n\nIn the afternoon a short walk around the block to stretch the legs. A neighbor’s cat perched on a wall; its tail swished to a rhythm almost synced with traffic. The air cooled as the sun tilted. Energy remained steady, not fatigue and not restless alertness, just a calm, functional level for finishing numbers and figures. I caught my reflection in a storefront window: hair disheveled by the breeze, eyes reflective but unshaken, posture upright from paying attention to it.\n\nA late-afternoon hiccup—an unexpected software snag—paused me and forced a regroup. I breathed, reminded myself of the plan, and shifted gears toward clarity. It wasn’t dramatic, just enough to slow the pace. I accepted the setback without frustration; it passed like a cloud. The stress was noticeable but forgiving, not personal. The rest of the afternoon moved on with quiet momentum, the kind that’s ordinary until you notice the work underneath.\n\nBack home I cooked a simple dinner: roasted chicken thighs with lemon and garlic, roasted carrots, and a small portion of quinoa soaking up the juices. I ate slowly, mindful of how the flavors carried through. The kitchen air smelled warm—rosemary from a friend’s cooking earlier, a faint echo of cinnamon from something baked—comforting without nostalgia. I poured water, then another. My appetite stayed steady, a reflection of the day’s balance.\n\nAfterward I cleaned gently, letting the dishes soak while I showered. The water felt like a familiar rinse of fatigue that burned nothing away but left me lighter and more alert. I sat on the bed’s edge with a cup of herbal tea, watching a shadow drift across the floor, a reminder that time moves in soft patterns. I thought about a recent small decision—adjusting the evening routine to wind down earlier—leaving room for quiet rather than screens, and I noticed its effect: a subtle lift in the morning and steadier mood late.\n\nAs night settled, I drew the curtains, tucked routines away, and entered the last minutes of calm before sleep. I read a few pages of a book that never begs to be finished, its characters imperfect and the plot moving in modest increments. The room was dim, the clock ticking softly. My mind wandered through the day’s hours—moments of ordinary movement, conversations drifting in and out, meals filling me without overflowing, decisions displaying their quiet, reliable effects. I felt a quiet appreciation for the day’s rhythm: not thrilling, not dramatic, just steady and reliable.\n\nLying in bed, I scanned my body: feet warm, legs relaxed, shoulders eased, breath even and unforced. My mood stayed in the neutral 6 out of 10, content enough not to chase a thrill but present. Energy hovered around 6 out of 10, enough to finish tasks with ease and still leave room for small evening pleasures. Sleep, I hoped, would keep this gentle rhythm through the night—not a peak, but a satisfying finish to a day that felt lived-in. I drifted toward sleep with quiet accomplishment, not from grand achievement, but because another ordinary day moved through me with dignity and care. If tomorrow holds a new challenge, I’ll meet it as I met today—steadily, without drama, and with the same quiet willingness to start again where I stand.",
+  "type": "text",
+  "dateOffset": -83,
+  "expectedAnalysis": {
+    "mood": {
+      "moodScale": 6,
+      "sentiment": "neutral",
+      "emotions": [
+        "neutral",
+        "calm"
+      ]
+    },
+    "energy": {
+      "energyLevel": 6,
+      "fatigueIndicators": [
+        "moderate fatigue"
+      ],
+      "sleepQuality": 7
+    },
+    "nutrition": {
+      "foodMentions": [
+        "mixed meals",
+        "some vegetables"
+      ]
+    },
+    "triggers": {
+      "stressors": [
+        "minor stress",
+        "daily challenges"
+      ],
+      "riskFactors": []
+    }
+  }
+}

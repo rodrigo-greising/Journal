@@ -1,0 +1,47 @@
+{
+  "content": "The day opened with the radiator hiss and a headache I pretended wasn’t there. I hadn’t slept well—too many thoughts, too little quiet. I woke a couple times with a racing pulse, then listened to the streetlight glow through the slats, wondering if rest would ever return. By the alarm my mood hovered around 1/10, fatigue pressing down my chest. Sleep had been restless; the pillows felt flat and the blanket never quite covered what ached.\n\nMorning moved in as a leaden tide. Getting out of bed felt heroic; the stretch afterward hurt, my back contorting as if I’d woken a machine I’d forgotten to oil. The apartment smelled faintly of yesterday’s coffee and something sweeter that had gone stale. I eyed the fridge like a museum exhibit I might fail to study. I settled for a microwaved pastry and water that tasted faintly of plastic. The pastry was rich enough to threaten a sugar crash, but quick felt like an achievement. Nutrition hovered between a whisper and a shrug; 2/10.\n\nWork arrived as a bleary screen and a task list that looked monstrous in fatigue. I opened a blank document and watched the cursor bite into my retinas. The first sentence came slowly, then vanished into backspaces. I tried to write about a project I’d been trying to move for weeks, but the words stuck in my throat. Notifications pinged, time slipping away while I stood still. The day’s rhythm was a low hum of stress and self-critique—an engine that wouldn’t accelerate or wind down.\n\nLate morning fatigue settled in as a constant presence. I picked at the edge of a mug, tapping the lip, anything to create motion without moving. A short walk seemed necessary, a bridge between stretch and reset, so I stepped outside and walked down the block in a careful, ceremonial way. Cold air pricked my cheeks; wind pressed at my collar, moving through me in slow pulses. The gray sky washed everything out, and even pigeons seemed to have more purpose than I did. The coffee shop line tempted, but I wouldn’t spend money on impulse.\n\nLunch was more processed than I’d hoped: bland, preservative-heavy, sliding down with little resistance and leaving a dull aftertaste. I ate while scrolling emails; the blue glow turned the room into a sterile, late-night office. I answered with robotic politeness and moved to another energy-draining task. The energy score in my head felt like someone finally turned the light off in a room I’d tried to illuminate with a matchstick. My stomach wasn’t hungry in a healthy way, more a hollow ache for real nourishment, but I was too spent to fight for it.\n\nMid-afternoon I checked in with someone I care about—a routine that sometimes lightens the load, but today barely rippled my mood. A short text exchange showed care, yet the thread didn’t weave into anything substantial. I answered with warm but brief replies, grateful for human contact yet aware it wouldn’t change how I felt inside: tight chest, heavy limbs, sense that nothing I did would land right. A longer walk or a call to a family member hovered as possibilities, but the energy to initiate those steps didn’t exist, and I sank back into the couch.\n\nAnother decision I’d made a few days earlier weighed on me—to slow the pace after noon, to rest rather than push. Today the impact was subtle and not the relief I’d hoped for. The choice felt noble in theory, but in practice I wavered between wanting to do more and a body that resisted with stubborn fatigue. It wasn’t that the decision was wrong; I couldn’t feel its benefits in the moment, only the ripple of its absence in a day that felt too long for quiet productivity.\n\nBy late afternoon the apartment grew stifling, walls tightening with the day’s weight. I brewed tea that grew cold on the desk as I stared at a document I hadn’t pushed past a few lines. Steam curled upward, and for a moment I imagined it carrying away the tense energy. It didn’t. Minutes stretched into a small marathon of waiting: for the clock to move, for a spark of motivation, for the ability to shift, to stand up without begging every joint. The clock ticked slowly, as if I dragged the day along.\n\nDinner arrived quickly and unceremoniously: more processed food, reheated with a little sauce to imply life. I slowed my breathing and counted to ten to coax steadiness back into the chest that wouldn’t stop contracting. The food did little to shift the mood or energy; nourishment barely dented the fatigue. Mood stayed around 1/10, with a wisp of worry that tomorrow would repeat today.\n\nEvening settled in with quiet stubbornness. I washed dishes in a ritual, hands warm at the sink, water running over the wrists, the faint scent of soap and metal. I stood there longer than necessary, listening to the water drip, letting the repetition swallow some noise. I checked the calendar; obligations loomed large, the stress at 10/10 as night deepened. I closed the laptop, folded a blanket, tidied cushions, and breathed—long, slow breaths that didn’t quiet the unease but softened it a fraction.\n\nTonight I saw the day as a thread in a longer tapestry. It wasn’t a day to greet with energy, but it was mine, lived within the limits I set and those the day imposed. Sleep remained restless, the kind that leaves a sour mouth and lingering ache. It isn’t the day I’d wish for, yet it exists. The journal ends with a quiet hope that tomorrow will be gentler, that a small sunrise might meet me with a slower, steadier pace.",
+  "type": "text",
+  "dateOffset": -142,
+  "expectedAnalysis": {
+    "mood": {
+      "moodScale": 1,
+      "sentiment": "negative",
+      "emotions": [
+        "sad",
+        "frustrated",
+        "anxious"
+      ]
+    },
+    "energy": {
+      "energyLevel": 1,
+      "fatigueIndicators": [
+        "exhausted",
+        "drained",
+        "lethargic"
+      ],
+      "sleepQuality": 2
+    },
+    "nutrition": {
+      "foodMentions": [
+        "processed foods",
+        "fast food",
+        "junk food",
+        "convenience meals"
+      ],
+      "calorieEstimate": 2012
+    },
+    "triggers": {
+      "stressors": [
+        "major deadlines",
+        "work pressure",
+        "anxiety"
+      ],
+      "riskFactors": [
+        "high stress",
+        "depression risk",
+        "burnout risk",
+        "anxiety"
+      ]
+    }
+  }
+}

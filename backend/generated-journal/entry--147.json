@@ -1,0 +1,47 @@
+{
+  "content": "I woke to that familiar ache in my chest, a weight I could feel even before I opened my eyes all the way. The room was pale with morning light, the blinds catching on a slow, stubborn shimmer that felt almost teasing. Sleep had not been kind. I’d tossed and turned, dreamt in fragments, and woke with the sense that a folder—today’s list of things to do—had slammed shut in my brain and then remained sealed, stubborn and unhelpful. My breath came shallow at first, and I counted to ten, then to twenty, and still the day seemed to press in with the same unrelenting insistence. The bed sheets clung to my shoulders like damp towels, and the radiator hissed a tiny, patient hiss that did nothing to warm the cold edge of fatigue on my skin.\n\nOnce I dragged myself toward the kitchen, the morning offered no relief, only the routine—a mug that refused to taste inviting, a slice of bread that felt more like an anchor than breakfast, a smear of cheap jam that flashed sweetness for a moment and then evaporated into the rest of the day’s dullness. I knew I should drink water, perhaps eat something more substantial, but the appetite had gone missing, or never showed up in the first place. The coffee woke a little, but it didn’t lift the fog; it merely scratched at it, like a fingernail running along a chalkboard. I stood at the counter with my elbows propped, watching the steam rise lazily while the room held its quiet, the kind of morning that makes you feel suffocated by the mere act of being awake.\n\nThe commute felt heavier than usual, as if gravity had decided to double down on my shoulders. The bus doors sighed open and closed, a hinge that reminded me I was still trapped in the same morning I’d woken to hours before. People moved with a kind of clipped efficiency that I envied from afar: a coworker’s quick, confident replies, the crispness of someone who slept well and carried a plan tucked under their arm. My own responses came slowly, and I found myself nodding more than talking, listening to others and realizing how little energy I had left to contribute. A meeting finally arrived, and I could feel the tension gather in my jaw before the first sentence left my mouth. I paused, forced a small smile, and traded a decisive word for a cautious one, hoping to shave off any risk of overcommitment. It felt stubbornly honest in the moment, though true honesty would have required more confidence and a steadier heartbeat.\n\nLunch was a quick salvaging of energy rather than nourishment. I grabbed a sandwich from a vending machine, something processed and comforting in its predictability, followed by a bag of chips that crunched too loudly in the quiet of the break room. The taste was mostly salt and sugar, a reminder that I had fallen back on convenience rather than care. I caught a glimpse of myself in the office window and didn’t recognize the shadow staring back—tired eyes, a mouth turned down at the corners, shoulders sagging with the weight of tasks that didn’t look any lighter now. The energy crash rolled in like a tide—one moment I was upright, the next I needed to lean on the desk as if the day itself might tip over.\n\nA small stroll after the workday did little to lift the mood, but it kept me moving and kept the world from closing in entirely. I walked the same familiar route, breath shallow at first and then steadier as the cold air braided itself into my lungs. The street smelled of wet pavement and a distant rain that hadn’t come, of exhaust and bakery citrus creeping from a corner where a pastry shop kept late hours. My footsteps were slow, almost deliberate, as if I needed to remind my body that it could still go somewhere if it kept pushing through. It was during that little walk that I reminded myself of a change I’d tried to put into effect in the last week: turning off notifications after dinner, giving myself a small margin of space away from screens. It hadn’t produced a fireworks show of relief, not today anyway, but there was a faint, hard-to-name sense that the day’s noise could be caught in less of a net if I could just hold still for a handful of breaths.\n\nEvening brought a quiet conversation with a friend that felt both distant and necessary. Their voice came through the phone with the steady calm I’d hoped to borrow that day, and for a few minutes I let the reassurance land—the ordinary, human kind that says you’re not alone in a mess of a day. We talked about small things, plans for a weekend that seemed far away and, at the same time, a real possibility. It wasn’t a cure, not even a remedy, but it was a thread to slip through the knot of my mood, a reminder that human connection could still exist in the margins of days that felt bleak. When the call ended, I stood by the kitchen counter again, the apartment quiet except for the distant hum of a refrigerator and the faint sound of city life filtering through the walls.\n\nDinner was again a quick, practical decision, something heated and easy, nothing that demanded energy I didn’t have. A frozen meal, steam rising in a pale, unglamorous column, tasted of salt and a kind of forced warmth. I ate standing up at the counter, the plastic fork clinking against the tray in a rhythm that felt almost ceremonial—the kind of ceremony that marks survival rather than celebration. The room’s light grew softer as the evening wore on, and the simple acts of tidying the sink, stacking a few dishes, and rinsing out a cup became small rituals of care, almost shabby in their sincerity. I didn’t expect a breakthrough—only a quieting of the day enough to keep my eyes open long enough to write a few lines here before sleep.\n\nThe night refused to grant me real rest. I lay down with a mind that would not quiet, a body that still felt heavy, and a sky outside that kept shifting in the blinds as if it were trying to tell me a story I couldn’t quite hear. I woke several times, surfaces of dreams flitting at the edge of memory, and each time I woke I tried to remind myself to detach from the day’s sharp edges, to give myself permission to reset and start again in the morning. The hours wore on with the same stubborn sense that I was carrying more than I could bear at once, that sleep would have to be earned by endurance rather than by relief. When sleep finally came again, it did so half-heartedly, the kind of surrender that felt more like surrendering to the night than to rest.\n\nIn the end, there was a quiet acceptance of the day as part of a longer arc I was walking, not a sudden triumph but a careful, honest accounting of a day that carried heavy weight and low mood. The small decisions—the attempt to mute the phone after dusk, the deliberate walk, the evening call that paused the day’s spinning—accrued into something I could name only as presence. The numbers in my head—mood low, energy low, sleep poor, nutrition uneven, stress high—stood like a weather report, not a verdict. If I could tuck away anything for tomorrow, it would be the memory of the friend’s steady voice, the cold air on my cheeks, the way the kitchen light spilled softly onto the counter, and the small, stubborn fact that I showed up for this day even when every part of me wanted to curl into the blankets and pretend it wasn’t happening. That’s where I’ll leave it tonight—not free of the weight, not magically lighter, but a fragment of a longer practice: to notice, to move, to keep showing up, even in a day that felt like a grind.",
+  "type": "text",
+  "dateOffset": -147,
+  "expectedAnalysis": {
+    "mood": {
+      "moodScale": 1,
+      "sentiment": "negative",
+      "emotions": [
+        "sad",
+        "frustrated",
+        "anxious"
+      ]
+    },
+    "energy": {
+      "energyLevel": 3,
+      "fatigueIndicators": [
+        "tired",
+        "low energy",
+        "fatigued"
+      ],
+      "sleepQuality": 2
+    },
+    "nutrition": {
+      "foodMentions": [
+        "mixed meals",
+        "some vegetables",
+        "occasional fast food",
+        "basic cooking"
+      ],
+      "calorieEstimate": 1889
+    },
+    "triggers": {
+      "stressors": [
+        "major deadlines",
+        "work pressure",
+        "anxiety"
+      ],
+      "riskFactors": [
+        "high stress",
+        "depression risk",
+        "burnout risk",
+        "anxiety"
+      ]
+    }
+  }
+}

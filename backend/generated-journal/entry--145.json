@@ -1,0 +1,47 @@
+{
+  "content": "The day didn’t start with a clean slate. I woke to the clock’s red digits blinking in the dim room and a weight in my chest that wouldn’t quit. The radiator hissed in the corner, a thin stream of warm air tugging at the edge of the blanket as if to coax sleep back out of me. My eyes felt gritty, the taste of cold metal in the first breath, and the bed sheets clung too tightly around my shoulders. I rolled onto my side and listened to the apartment wake up—the creak of the kitchen chair, the distant hum of traffic, the soft whine of the fridge. Sleep had been shallow and restless, waking me with every small noise as if the night had rewritten itself while I slept.\n\nGetting up felt like a measurable effort. The floorboards were cool under bare feet, a sting to the soles that reminded me energy might be scarce today. The coffee maker coughed to life, filling the room with a sour, almost burnt scent despite the window cracked a finger’s width. I measured two spoonfuls of coffee, added too much cream, and ate a square of toast with margarine. The jam was cheap—bright red, very sweet, almost medicinal—and left a trace of yesterday’s hunger lingering as I faced the looming to-do list.\n\nThe shirt creased at the moment I pulled it on; jeans felt stiff, and the cardigan didn’t quite match the weather but shielded me from the morning bite as I closed the apartment door. The street was not unkind, just busy—puddles and damp wool in the air, a thin autumn breeze. The walk to the bus stop was a string of habitual motions: shoulders hunched to guard against the chill, hands buried in pockets, a mind hopping from thought to thought.\n\nWork arrived with a deadline’s sharp snap. The monitor glowed with unread emails; I tried to steady myself with a seat drop and opening a document, but concentration wandered as if pulled by invisible threads. A coworker asked an ordinary question; I offered a half-smile and a half-answer, avoiding commitment as small talk tangled my focus. The air hummed with lights, coffee, keyboards, and a low undercurrent of stress that crept toward the edge of legibility: this needs to be done, now.\n\nLunch was leftovers—a pale, nondescript bowl and a handful of crackers. Solids felt foreign in my mouth, as if I’d forgotten how to chew without tasting the weight of the day. The meal offered a dull grounding, a moment when gravity seemed to anchor me to the chair. Minutes bled into tasks demanding quick decisions and steadier energy I didn’t have. I thought of a small rule—no scrolling after eight, no doomscrolling before bed—and wondered if it would help today or if old habits would win again.\n\nBy midafternoon fatigue grew teeth. My legs dragged; a loop of do this, then that, then breathe, produced nothing meaningful. A short walk felt like a lifeline, but opening the door yielded a sting of cold air and I turned back, half relieved, half frustrated, unable to summon energy to move. Back at my desk, a stubborn line of code blinked and did nothing, as if we both disagreed on what needed doing.\n\nA reminder of a recent decision drifted in: protect the evenings, mute notifications, craft a small ritual to ease from work to sleep. The plan hadn’t helped today. The phone stayed quiet longer than usual, which should have felt like relief but instead felt like another thing I couldn’t rely on. Night’s silence was heavy, not comforting, just a reminder the world spins without your permission.\n\nLeaving the office, I walked home at a measured pace, hoping to scrub away the day’s grit with each step. The apartment welcomed me with its ordinary chorus—the kettle, the cat lazing on the couch, a sour fridge scent I didn’t have the energy to investigate. Dinner was quick and forgettable: a frozen pizza in the oven, its synthetic scent filling the room, followed by a small handful of chips that tasted crisp and calm my imagined harm, just enough to pretend I could eat without consequence.\n\nI sought a wind-down in a warm shower, the water hissing into steam that blurred the day’s edges. I dressed in damp pajamas, stood listening to the apartment breathe, and counted only to feel the night’s promise slip away. Teeth brushed, glass of water; I looked out the window at the quiet street below, where a car passed once in a while and the distant sound of a dog barked out of nowhere.\n\nSleep did not arrive easily. The room stayed bright with a restless mind and a pulse that kept time with a chorus of what-ifs and why-didn’t-I. I replayed minutes of the day—the chair’s squeak, the coffee’s taste before the afternoon’s heaviness, an unread text in the corner of my screen. I tried to count breaths, to convince myself rest might come, but the night turned and I woke again, softer with each start but never soft enough to drift for long.\n\nMorning would likely bring the same stubborn ache: mood low, energy vanished with the next task. I caught myself imagining how I might have paced the day differently—more deliberate breakfast, a longer walk, stricter notification boundaries—and I acknowledged that small, imperfect choices are still choices, and the day had held back its full hand until now. The weight pressed from all sides, and not a single moment offered more than a stubborn breath to push back.\n\nIf anything, I woke with a quiet admission: today didn’t owe relief. I carried the week’s momentum, a few unkind words from a meeting, unfinished tasks, poor sleep, and a sour taste on my tongue, yet I kept moving. When I curled into bed, not quite ready to surrender to sleep, I thanked the small mercies—the soft warmth of the sheets, the apartment’s quiet, the knowledge that tomorrow would arrive with its own version of this challenge and, perhaps in some unknowable way, offer one minute more to begin again.",
+  "type": "text",
+  "dateOffset": -145,
+  "expectedAnalysis": {
+    "mood": {
+      "moodScale": 1,
+      "sentiment": "negative",
+      "emotions": [
+        "sad",
+        "frustrated",
+        "anxious"
+      ]
+    },
+    "energy": {
+      "energyLevel": 3,
+      "fatigueIndicators": [
+        "tired",
+        "low energy",
+        "fatigued"
+      ],
+      "sleepQuality": 2
+    },
+    "nutrition": {
+      "foodMentions": [
+        "mixed meals",
+        "some vegetables",
+        "occasional fast food",
+        "basic cooking"
+      ],
+      "calorieEstimate": 2147
+    },
+    "triggers": {
+      "stressors": [
+        "major deadlines",
+        "work pressure",
+        "anxiety"
+      ],
+      "riskFactors": [
+        "high stress",
+        "depression risk",
+        "burnout risk",
+        "anxiety"
+      ]
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "content": "I woke to the radiator hiss and a pale strip of light across the ceiling. Warmth soon tightened into the memory of a night: a dream about a missed bus, a coat left behind, and the thin edge of worry that comes with unfinished tasks. I rolled onto my back and counted breaths until the clock’s red digits reminded me that sleep had given me more interruptions than rest. The first real morning sounds—the kettle, the soft clack of a neighbor’s shoes—made sleep feel like a small win I hadn’t earned: fair sleep, some disruption, five out of ten.\n\nI brewed coffee and watched it settle into momentum rather than my thoughts. A scarf over my hoodie, I shuffled into the kitchen’s pale light; toast popped up with a sigh and a smear of butter that felt both unnecessary and comforting. Breakfast arrived quick and unsatisfying—one pastry cup recalling simpler mornings, a sugary sweetness that lingered on the tongue even as I pushed it aside with another sip. My stomach felt unsettled, not painful so much as opinionated, and my shoulders rose toward my ears at the memory of all the little things I needed to do.\n\nThe day moved at its stubborn pace. The commute stretched longer than necessary—red taillights, the city waking around me. My tote carried the usual: notebook, charger, two pens that never write as smoothly as promised, and a snack I kept telling myself would be enough. It wasn’t, not today, and the jaw ache at the desk confirmed the body wouldn’t pretend it was better than the mood.\n\nWork opened with a tight deadline tugging at sleeves. A project I’d started weeks ago kept circling back with new questions, each one heavier than the last. The day’s snapshot was a chorus of small demands: update this, clarify that, link the previous section, send the file before lunch. I moved with careful, deliberate strides rather than bursts—concentration wandered like a leaf, fear slipping into margins. The room smelled faintly of coffee; servers hummed outside my window; the keyboard’s tap-tap stretched into minutes that felt longer than they should.\n\nI’d begun a few changes I hoped would keep the day from sliding away. A simple routine: a short pause with coffee before emails, and a post-writing stretch at the desk. I’d even written a one-line note the night before to set a calmer intention for the morning. Today those changes felt like a quiet weather pattern—no lightning, just a stubborn shift toward steadier rhythm. They didn’t erase the pressure, but they kept my breath from sprinting whenever the supervisor’s name flashed or a deadline pinged.\n\nLunch arrived as a ceremony of compromise: a tray that resembled nutrition only in its shape—greasy chicken nugget, soggy microwaved vegetables, a slice of bread that tasted more like memory. I ate slowly, spooned a touch more sauce to soothe a dry throat, and drank water hoping hydration might ease the chest knots. Coffee stayed a familiar partner; it kept me upright, but only tilted the room toward a brighter corner before settling back into grey. Energy stayed stubbornly at four out of ten: enough to move, not enough to lift the day.\n\nAfternoon offered a few bright moments—one paragraph finally taking shape, a sentence with weight, a colleague’s sincere note of encouragement. Yet the weight pressed on the spine, the stress unrelenting. I watched the clock during the late-afternoon ritual of closing the laptop, waiting for the screen to go dark and the room to quiet. Relief didn’t come so much as permission to breathe a little deeper.\n\nHomeward, the city’s noise softened to a distant murmur, as if the street itself exhaled after a long day. I walked at a careful pace, not rushing into the apartment but letting the body do what it needed: a long stretch, slow shoulder rolls, a twist to loosen the neck. The walk lifted mood more than I expected, though the mood remained neutral—four, not unhappy, just resistant to motion. The late winter sky wore a pale gray, and the air felt tired, like it had carried the day and could lay it down.\n\nDinner was a quick, processed meal punctuated by vegetables that glowed under neon. I considered something lighter—soup, perhaps—but guilt hovered: not being more efficient, more disciplined, more capable of care. So I chose the easier path and told myself I’d try again tomorrow. The meal tasted manufactured but familiar; nourishment and comfort don’t always align when the mind’s crowded with tasks and the body’s too tired to demand better.\n\nOn the couch with a blanket, I listened to the apartment’s quiet as if walls were listening back. I checked in with a friend, not with dismissiveness but with light support, enough to remind me I wasn’t alone in the heavy parts. We sketched a small plan for the week: more morning structure, slower unwinding at night, perhaps a shorter, intentional walk after work to acknowledge stress rather than outrun it. I didn’t promise much, just a willingness to try something different.\n\nBy nine, the apartment settled into a quiet that invites reflection without sermon. I wrote not a confession but a record of an ordinary day that carried weight. Sleep teased with the dream of soft springs and distant traffic, then settled into the bed’s creak and the breathing’s steady rhythm. The day’s notes lay across my mind like a map I wasn’t sure how to read—corners reminding me of tasks handled, promises broken, the stubborn reality that some days demand heavy crossings of thresholds rather than bright breakthroughs.\n\nWhen I finally drifted off, the body was tired, the mind clear in a stubborn, real way. I slept with a slit of air between the cold outside and warmth inside, a small negotiation for a day that asked more than I thought I could give. Tomorrow would arrive with its own demands, another chance to test the small changes I’d started and see what a gentler day could look like, even if today’s mood remained a steady four, its energy a cautious four, its sleep a five, its nutrition a three, and its stress dialed to ten. In the quiet at day’s end, I allowed the thought that this was not a failure, merely a day with its own stubborn weather, and that I would wake again to meet it with the same stubborn, human hope I carried into it.",
+  "type": "text",
+  "dateOffset": -172,
+  "expectedAnalysis": {
+    "mood": {
+      "moodScale": 4,
+      "sentiment": "negative",
+      "emotions": [
+        "tired",
+        "discouraged"
+      ]
+    },
+    "energy": {
+      "energyLevel": 4,
+      "fatigueIndicators": [
+        "tired",
+        "low energy"
+      ],
+      "sleepQuality": 5
+    },
+    "nutrition": {
+      "foodMentions": [
+        "mixed meals",
+        "some vegetables",
+        "occasional fast food",
+        "basic cooking"
+      ],
+      "calorieEstimate": 2063
+    },
+    "triggers": {
+      "stressors": [
+        "major deadlines",
+        "work pressure",
+        "anxiety"
+      ],
+      "riskFactors": [
+        "high stress",
+        "anxiety"
+      ]
+    }
+  }
+}

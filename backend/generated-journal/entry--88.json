@@ -1,0 +1,46 @@
+{
+  "content": "The day arrived with hollow heaviness that presses on the ribs before I sit up. I woke to the creak of bed springs and a window shade jammed a few inches, letting in pale light that felt empty. The air was cool and distant, the room more memory than place. I lay listening to the clock and the fridge, a small chorus that did nothing for my mood. Sleep was poor, restless in that jagged way where every shallow breath hurts the chest. Dream fragments flickered behind my eyes—unfinished tasks, a meeting that kept slipping away—and I woke to the same knot of worry and sour sleep that wouldn’t stitch itself.\n\nWhen I dragged myself out of bed, the morning felt slower than usual, as if every motion were an earned privilege I hadn’t yet earned. The kettle hissed; my hands shook around the mug, not from caffeine but from starting the day. I drank a small cup, not bold, enough to taste something familiar but a bit burnt. Breakfast was oats with banana and yogurt—appetite thin today. I forced a couple of blueberries in and cast a wary glance at the rest, as if food might betray me. A slice of toast waited, butter melted into crumbs, and I ate half, the other half saved for later.\n\nMy mood sat at a 1: a dull chest ache, numb jaw, a squeeze that makes smiles feel temporary. I wasn’t angry, more weighted, a fog that muted color and the ordinary noise of the apartment. Energy hovered around a 2, with a few hesitant steps and a stubborn spine. My body carried wear: tight shoulders, stiffness in the lower back, a shallow breath even when I tried to breathe deeply.\n\nI moved through the morning with wary mindfulness, as if the day might demand more than I could give. The commute was a small trial—the bus doors sighing, stale air, rough seat fabric, the radio muttering weather and ads. The office glared with fluorescent light, the desk smelling faintly of coffee and ink, the screen glare turning the room into a cold stage for a performance I wasn’t sure I wanted. There was urgency in the air—numbers to check, emails to send, a forecast to prepare—that rose like a tide even as my legs felt heavy.\n\nLate morning: a core task demanded attention—a chart with misaligned numbers and a forecast that felt essential and impossible to conjure from fog. I stared at the figures, fraying at the edge of frustration. I tried small steps: fix one variable, adjust an assumption, then breathe. It helped just enough to type a cautious note and send it to my boss with a plan for tomorrow. The words felt heavy, the act of clicking send a hollow release. Finishing something gave a relief that evaporated the moment the next task appeared.\n\nLunch offered a tiny relief. I warmed yesterday’s soup—carrot, potato, herbs—and nibbled crackers, sipping water between bites. It tasted soldered together, not crafted. I ate because I should, not because I wanted to. A plain yogurt, a few lettuce leaves with dull dressing—nutrition that felt mixed today by mood. A crumb of chocolate sat in the desk drawer, a small sweetness, half eaten as a small rebellion against gravity.\n\nThe afternoon stretched, a heavy tempo. Stress weighed on my shoulders. A quick check-in with a colleague offered a flicker of human connection; her voice, soft in the hall, asked how I was, and I replied with “the usual,” partly true and partly lie. A text from a friend offered warmth without demand, and I felt gratitude despite the numbness. I walked ten minutes after lunch, air cold enough to sting my cheeks and remind my body it could still move. The sidewalk smelled of damp earth and diesel; a distant bus sighed by. My legs felt heavier, the deeper breath harder, a reminder that movement isn’t automatic today.\n\nLate afternoon, the weight settled deeper. Thoughts turned to what needed doing tonight and tomorrow, and the fear of not delivering rose like a current that makes sleep feel distant yet precious. I sketched a simple evening plan: dinner, a quick stretch, a warm shower, a short read before sleep. I tried a small ritual to ease stress—breathing, releasing the shoulders, stepping away from screens after dinner. It sounded rational, but the body didn’t trust the plan.\n\nEvening brought modest comfort. I cooked pasta with tomato sauce, spinach, and a fried egg on top for protein. Garlic faded on the tongue, sauce a touch too sweet, bread comforting. A spark of mood lifted briefly, then faded. I spoke with my partner for a few minutes, keeping it light, avoiding heavier topics I worried would land on them. Their steadiness reminded me I wasn’t alone with the weight, though loneliness wore a thin shawl over my shoulders.\n\nNight fell and sleep remained elusive. I lay with eyes open, listening to the house settle—pipes coughing, a streetlight hum, a dog barking below. The mind wandered through unfinished tasks and then to memories of kindness—an encouraging word, the warm kitchen light, a familiar song. I turned side to side, counting breaths without rhythm, and finally forgave the day for what it was: a day of low mood, low energy, high stress, part of a longer story I’m trying to tell with honesty and patience.\n\nIf there’s a silver thread, it’s in the tiny acts of letting the day pass, not pretending it didn’t happen. I claim no triumph tonight, only the choice to listen to my body, to eat slowly when appetite exists, to move when there’s motion in the legs, and to trust that this slow arc is part of something longer and more forgiving than any single day. Tomorrow will bring its own mix of difficulty and grace, and I’ll meet it with the same careful attention, carrying a bit more kindness in my routine and a little less self-judgment in the quiet hours after dark.",
+  "type": "text",
+  "dateOffset": -88,
+  "expectedAnalysis": {
+    "mood": {
+      "moodScale": 1,
+      "sentiment": "negative",
+      "emotions": [
+        "sad",
+        "frustrated",
+        "anxious"
+      ]
+    },
+    "energy": {
+      "energyLevel": 2,
+      "fatigueIndicators": [
+        "exhausted",
+        "drained",
+        "lethargic"
+      ],
+      "sleepQuality": 3
+    },
+    "nutrition": {
+      "foodMentions": [
+        "mixed meals",
+        "some vegetables",
+        "occasional fast food"
+      ],
+      "calorieEstimate": 1643
+    },
+    "triggers": {
+      "stressors": [
+        "major deadlines",
+        "work pressure",
+        "anxiety"
+      ],
+      "riskFactors": [
+        "high stress",
+        "depression risk",
+        "burnout risk",
+        "anxiety"
+      ]
+    }
+  }
+}

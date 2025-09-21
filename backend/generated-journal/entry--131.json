@@ -1,0 +1,47 @@
+{
+  "content": "The day began with the fridge hum and pale light slipping around the blinds. Sleep felt restless again, a crowded room of unresolved sounds. I woke a few times to the muffled thud of the building settling and the clock looping through its quiet minutes. When the alarm finally gave up and I rolled onto my back, the bed seemed too warm, too firm, like something insisting I stay put even as my body urged forward. My neck stiffened; the first shallow breaths pulled a dull ache into my shoulders. A constant gray weight pressed at the edges of everything I tried to do.\n\nDeliberate slowness framed the morning. The kettle hissed, water pooling and steam curling in lazy ribbons; the room smelled faintly of old laundry and citrus soap. I brewed coffee not out of desire but to coax the body into motion. A spoon of sugar, a splash of milk; even stirring felt heavy, as if coaxing a stubborn door open. Breakfast was a pre-packaged pastry warmed in the microwave—a pale yellow disk of sweetness that left a chalky aftertaste. I promised myself I’d eat fresh later, but the clock kept slipping away.\n\nNoise crowded the apartment: clock ticks, the heater sighing, a distant car door slamming, a neighbor coughing in the hall. I fed the cat, who blinked at me as if to ask what the fuss was about. I ate a single slice of bread with margarine and grape jelly—taste of processed sweetness and nostalgia, not nourishment. A dull ache settled in my chest rather than hunger; my body begged for rest while my mind kept racing.\n\nI showered in a fog of fatigue and dressed in something presentable, coat in hand, intending to walk to the bus stop or at least step outside. The air felt damp and heavy, the city louder in the early hours, like it was shouting at me to hurry. I yielded to a slow indoor circuit instead—circling the living room, the kitchen, the couch that would not let me nap.\n\nWork pulled at me with gravity. I opened the laptop and faced a screen that glared back, the cursor blinking with stubborn patience. I started a few small tasks—an email, a note—but nothing felt urgent. The to-do list, manageable on better days, looked like a wall of damp bricks. Each line took a long exhale; messages pinged in with alarms I could barely hear through fatigue. I moved things to future dates and told myself I’d begin later, then stretched and discovered new stiffness in my hip and neck.\n\nLunch followed the same pattern: quick, processed, soothing without demanding much. Instant soup, a handful of crackers, a soda that tasted too sweet. The soup warmed the room and my hands but not my mood. The afternoon stretched in long, soft waves of fatigue; I tried to nap on the couch but rest refused to land. I drifted toward murky sleep, waking with a chest ache and a sense I had slipped farther from the ground I wanted.\n\nPerhaps pacing mornings could be a mercy in the long run, even if today it felt faint. A week earlier I’d promised to ease off endless scrolling at night, to let the phone lie quiet until morning light. Today I didn’t keep that promise well. I reached for the device anyway, scrolling through noise masquerading as connection. The six-month arc—learning how to rise again after rough days—hovered at the edge of attention, a map I wasn’t ready to read.\n\nEarly evening brought a brief call from a friend—the weather, a movie, a recipe. I spoke slowly, carefully, each sentence carrying a pebble of effort. We promised to catch up later, and I felt a small tug toward connection, enough to remind me I wasn’t wholly isolated in the room of tired air. When I hung up, the quiet returned, a wool blanket too small for the room. My mind ran through the day’s failures and the ones I’d postponed.\n\nDinner was quick again, not nourishing. I checked the kitchen trash can lid for leftover energy. The body settled into the couch with a yawn born from the core, a heat along the spine that cooled into the shoulder. The stove timer clicked softly as a plastic container waited for another round. I sipped lukewarm peppermint tea, a small ritual offering brief relief in a day that refused to lift.\n\nNight brought the same restless legs and dreams I could barely recall. A stubborn ache sat behind the sternum, coexisting rather than demanding attention. I thought again of the six-month arc: highs and lows, days that felt almost too feeble to matter. The only way through is to show up tomorrow, even if only for a few steps and a breath.\n\nWhen I turned to the page, the handwriting wobbled as if the day pressed down on the pen. I wrote about anchors: the cat’s soft presence, the blinds catching a streetlight and turning it into a thin stripe on the floor, the kettle sigh after each cup. I wrote about the heaviness of mood, the fatigue, work climbing a hill with slippery shoes, and a single kind word from a friend warming the chest. I did not pretend a breakthrough had arrived; I acknowledged the struggle as part of the journey.\n\nAs the night settled, I closed the notebook with a soft snap and listened to the room breathe. There wasn’t a dramatic realization, just a sense that I hadn’t emptied the well today. The day drained most of my reservoirs, but the small rituals—the mug of tea, the quiet texts, the simple act of moving one foot in front of the other—left a thread of continuity: a long journey measured not by peak days but by how you return to ground when you’ve slipped. I wrote this to remember that even on days when energy is a whisper, there is movement, weathering, and care. Tonight I would try to sleep with as little resistance as possible and greet tomorrow with a soft, stubborn breath and one small, doable thing.",
+  "type": "text",
+  "dateOffset": -131,
+  "expectedAnalysis": {
+    "mood": {
+      "moodScale": 1,
+      "sentiment": "negative",
+      "emotions": [
+        "sad",
+        "frustrated",
+        "anxious"
+      ]
+    },
+    "energy": {
+      "energyLevel": 1,
+      "fatigueIndicators": [
+        "exhausted",
+        "drained",
+        "lethargic"
+      ],
+      "sleepQuality": 1
+    },
+    "nutrition": {
+      "foodMentions": [
+        "processed foods",
+        "fast food",
+        "junk food",
+        "convenience meals"
+      ],
+      "calorieEstimate": 1827
+    },
+    "triggers": {
+      "stressors": [
+        "major deadlines",
+        "work pressure",
+        "anxiety"
+      ],
+      "riskFactors": [
+        "high stress",
+        "depression risk",
+        "burnout risk",
+        "anxiety"
+      ]
+    }
+  }
+}
